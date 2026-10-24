@@ -1,0 +1,212 @@
+/* HEADER */
+.ctnHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82px;
+    z-index: 1000;
+    background: rgba(11, 17, 32, 0.96);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background .3s ease, box-shadow .3s ease;
+}
+
+.ctnHeader.scrolled {
+    background: rgba(11, 17, 32, 0.97);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px);
+}
+
+.ctnHeader .header {
+    width: min(100% - 64px, 1200px);
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* LOGO */
+.ctnLogo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.ctnLogo .logoIcon {
+    color: #fff;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.ctnLogo .logoIcon span {
+    color: var(--primary);
+}
+
+.ctnLogo .logoText {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* NAVBAR */
+.ctnNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.ctnNav a {
+    position: relative;
+    color: #aebbd0;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color .25s ease;
+}
+
+.ctnNav a:hover,
+.ctnNav a:focus-visible {
+    color: #fff;
+}
+
+.ctnNav>a:not(.navContactMobile)::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -8px;
+    background: var(--primary);
+    transition: width .25s ease;
+}
+
+.ctnNav>a:hover::after {
+    width: 100%;
+}
+
+.ctnNav .navContactMobile {
+    display: none;
+}
+
+/* ACCIONES */
+.ctnActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btnContact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 19px;
+    background: var(--primary);
+    border-radius: 9px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.btnContact:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btnMenuMobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .05);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* TABLET Y MOBILE */
+@media (max-width: 900px) {
+    .ctnHeader {
+        height: 70px;
+    }
+
+    .ctnHeader .header {
+        width: calc(100% - 40px);
+        gap: 16px;
+    }
+
+    .ctnNav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 20px;
+        background: #0b1120;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, .2);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity .25s ease, transform .25s ease, visibility .25s;
+    }
+
+    .ctnNav.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .ctnNav a {
+        display: block;
+        padding: 14px 12px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .ctnNav>a::after {
+        display: none;
+    }
+
+    .ctnNav .navContactMobile {
+        display: none;
+    }
+
+    .btnMenuMobile {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .ctnHeader .header {
+        width: calc(100% - 32px);
+    }
+
+    .ctnLogo .logoText {
+        font-size: 14px;
+    }
+
+    .ctnNav .navContactMobile {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #60a5fa;
+    }
+
+    .btnContact {
+        display: none;
+    }
+}
