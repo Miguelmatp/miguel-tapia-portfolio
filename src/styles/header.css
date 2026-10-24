@@ -177,6 +177,9 @@
         font-size: 14px;
         border-bottom: 1px solid var(--border-dark);
     }
+    .ctnNav a:nth-of-type(5){
+        border: none !important;
+    }
 
     .ctnNav > a::after {
         display: none;
