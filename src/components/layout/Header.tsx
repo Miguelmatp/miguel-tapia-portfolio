@@ -1,16 +1,10 @@
 ﻿
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { links } from "../../data/links";
+import { links, navigationLinks } from "../../data/links";
 import "../../styles/header.css";
 
-const navigation = [
-    { label: "Inicio", href: links.home },
-    { label: "Sobre mí", href: links.about },
-    { label: "Habilidades", href: links.skills },
-    { label: "Experiencia", href: links.experience },
-    { label: "Proyectos", href: links.portfolio }
-];
+const navigation = navigationLinks.filter(item => item.href !== links.education);
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
