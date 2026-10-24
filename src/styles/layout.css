@@ -1,0 +1,11 @@
+
+.ctnHeader, .ctnHero, .ctnAbout, .ctnSkills,
+.ctnEducation, .ctnExperience, .ctnPortfolio,
+.ctnContact, .ctnFooter {
+    width: 100%;
+}
+
+.ctnHero, .ctnAbout, .ctnSkills, .ctnEducation,
+.ctnExperience, .ctnPortfolio, .ctnContact {
+    padding: 100px 0;
+}

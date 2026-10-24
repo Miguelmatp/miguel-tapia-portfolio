@@ -1,0 +1,16 @@
+
+@media (max-width: 1024px) {
+    .ctnHero, .ctnAbout, .ctnSkills, .ctnEducation,
+    .ctnExperience, .ctnPortfolio, .ctnContact {
+        padding: 72px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .ctnContenido { width: min(100% - 32px, var(--max-width)); }
+
+    .ctnHero, .ctnAbout, .ctnSkills, .ctnEducation,
+    .ctnExperience, .ctnPortfolio, .ctnContact {
+        padding: 56px 0;
+    }
+}
