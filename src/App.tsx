@@ -7,7 +7,7 @@ import Skills from "./components/sections/Skills";
 import Education from "./components/sections/Education";
 import Experience from "./components/sections/Experience";
 import Portfolio from "./components/sections/Portfolio";
-import Contact from "./components/sections/Contact";
+// import Contact from "./components/sections/Contact";
 
 export default function App() {
     return (
@@ -20,7 +20,7 @@ export default function App() {
                 <Education />
                 <Experience />
                 <Portfolio />
-                <Contact />
+                {/* <Contact /> */}
             </main>
             <Footer />
         </div>
