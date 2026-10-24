@@ -1,0 +1,76 @@
+
+/* PORTAFOLIO */
+.ctnPortfolio { width: 100%; padding: 110px 0; background: var(--background); }
+.ctnPortfolio > .ctnContenido { display: flex; flex-direction: column; align-items: center; gap: 45px; }
+
+/* TÍTULO */
+.ctnPortfolioTitle { max-width: 650px; display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center; }
+.ctnPortfolioTitle .sectionTag { color: var(--primary); font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+.ctnPortfolioTitle h2 { margin: 0; color: var(--text-primary); font-size: clamp(32px,3.5vw,48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.2; }
+.ctnPortfolioTitle h2 span { color: var(--primary); }
+.ctnPortfolioTitle p { margin: 0; color: var(--text-secondary); font-size: 15px; line-height: 1.8; }
+
+/* GRID */
+.ctnPortfolioGrid { width: 100%; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: stretch; gap: 20px; }
+
+/* TARJETA */
+.portfolioCard { min-width: 0; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.portfolioCard:hover { transform: translateY(-5px); border-color: var(--border-primary); box-shadow: 0 15px 40px rgba(37,99,235,.08); }
+
+/* IMAGEN */
+.portfolioImage { position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; background: var(--primary-soft); }
+.portfolioImage img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.portfolioCard:hover .portfolioImage img { transform: scale(1.05); }
+.portfolioCategory { position: absolute; top: 14px; left: 14px; padding: 7px 12px; border-radius: 7px; background: var(--background-dark); color: var(--text-dark); font-size: 11px; font-weight: 600; }
+
+/* INFORMACIÓN */
+.ctnPortfolioInfo { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px; }
+.ctnPortfolioDescription { display: flex; flex-direction: column; gap: 10px; }
+.ctnPortfolioDescription h3 { margin: 0; color: var(--text-primary); font-size: 19px; font-weight: 700; }
+.ctnPortfolioDescription p { margin: 0; color: var(--text-secondary); font-size: 13px; line-height: 1.8; }
+
+/* TECNOLOGÍAS */
+.ctnPortfolioTech { display: flex; flex-wrap: wrap; gap: 7px; }
+.ctnPortfolioTech span { padding: 6px 10px; border-radius: 6px; background: var(--primary-soft); color: var(--primary); font-size: 10px; font-weight: 600; }
+
+/* ACCIONES */
+.ctnPortfolioActions { display: flex; align-items: center; flex-wrap: wrap; gap: 15px; }
+.ctnPortfolioActions a { display: inline-flex; align-items: center; gap: 7px; color: var(--primary); font-size: 12px; font-weight: 600; transition: color .25s ease; }
+.ctnPortfolioActions a:hover { color: var(--primary-hover); }
+
+/* VER TODOS */
+.portfolioViewAll { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 22px; border: 1px solid var(--border-primary); border-radius: 10px; background: var(--surface); color: var(--primary); font-size: 13px; font-weight: 600; cursor: pointer; transition: background .25s ease, gap .25s ease; }
+.portfolioViewAll:hover { background: var(--primary-soft); gap: 15px; }
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .ctnPortfolio { padding: 85px 0; }
+    .ctnPortfolioGrid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .ctnPortfolioInfo { padding: 20px; }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .ctnPortfolio { padding: 70px 0; }
+    .ctnPortfolio > .ctnContenido { gap: 32px; }
+    .ctnPortfolioGrid { grid-template-columns: 1fr; gap: 15px; }
+    .ctnPortfolioTitle h2 { font-size: clamp(32px,6vw,40px); }
+    .portfolioImage { aspect-ratio: 16/9; }
+}
+
+/* MOBILE PEQUEÑO */
+@media (max-width: 480px) {
+    .ctnPortfolio { padding: 60px 0; }
+    .ctnPortfolioTitle h2 { font-size: 32px; }
+    .ctnPortfolioTitle p { font-size: 13px; }
+    .ctnPortfolioInfo { padding: 18px; gap: 15px; }
+    .ctnPortfolioDescription h3 { font-size: 17px; }
+    .ctnPortfolioDescription p { font-size: 12px; }
+    .portfolioCategory { top: 10px; left: 10px; font-size: 10px; }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    .portfolioCard, .portfolioImage img, .portfolioViewAll { transition: none; }
+    .portfolioCard:hover, .portfolioCard:hover .portfolioImage img { transform: none; }
+}

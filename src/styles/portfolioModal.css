@@ -1,0 +1,77 @@
+
+/* OVERLAY */
+.ctnPortfolioOverlay { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(5,12,26,.78); backdrop-filter: blur(8px); }
+
+/* MODAL */
+.ctnPortfolioModal { width: min(100%,1100px); max-height: 90vh; max-height: 90dvh; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--border-dark); border-radius: 20px; background: var(--background-dark); color: var(--text-dark); box-shadow: 0 30px 100px rgba(0,0,0,.35); }
+
+/* ENCABEZADO */
+.ctnPortfolioModalHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 28px 32px 22px; border-bottom: 1px solid var(--border-dark); }
+.portfolioModalTitle { display: flex; flex-direction: column; gap: 8px; }
+.portfolioModalTitle .sectionTag { color: var(--primary-light); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+.portfolioModalTitle h2 { margin: 0; color: var(--text-dark); font-size: clamp(22px,2.5vw,30px); }
+.portfolioModalTitle p { margin: 0; color: var(--text-dark-secondary); font-size: 13px; line-height: 1.6; }
+.portfolioModalClose { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--border-dark); border-radius: 10px; background: rgba(255,255,255,.05); color: var(--text-dark); cursor: pointer; }
+.portfolioModalClose:hover { background: rgba(255,255,255,.12); }
+
+/* BUSCADOR Y FILTROS */
+.ctnPortfolioModalTools { display: flex; flex-direction: column; gap: 15px; padding: 20px 32px; border-bottom: 1px solid var(--border-dark); }
+.portfolioModalSearch { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 15px; border: 1px solid var(--border-dark); border-radius: 10px; background: rgba(255,255,255,.05); color: var(--text-dark-secondary); }
+.portfolioModalSearch:focus-within { border-color: var(--primary-light); }
+.portfolioModalSearch input { width: 100%; min-width: 0; border: none; outline: none; background: transparent; color: var(--text-dark); font-size: 13px; }
+.portfolioModalSearch input::placeholder { color: var(--text-dark-secondary); }
+.ctnPortfolioModalFilters { display: flex; align-items: center; gap: 9px; overflow-x: auto; scrollbar-width: none; }
+.ctnPortfolioModalFilters::-webkit-scrollbar { display: none; }
+.ctnPortfolioModalFilters button { flex-shrink: 0; padding: 9px 15px; border: 1px solid var(--border-dark); border-radius: 9px; background: rgba(255,255,255,.04); color: var(--text-dark-secondary); font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; }
+.ctnPortfolioModalFilters button:hover { color: var(--text-dark); background: rgba(255,255,255,.1); }
+.ctnPortfolioModalFilters button.active { background: var(--primary); border-color: var(--primary); color: var(--text-dark); }
+
+/* CONTENIDO */
+.ctnPortfolioModalBody { flex: 1; min-height: 0; padding: 25px 32px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--primary) transparent; }
+.ctnPortfolioModalGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.portfolioModalCard { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--border-dark); border-radius: 13px; background: rgba(255,255,255,.04); }
+.portfolioModalImage { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--surface-dark); }
+.portfolioModalImage img { width: 100%; height: 100%; object-fit: cover; }
+.portfolioModalInfo { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; }
+.portfolioModalCategory { color: var(--primary-light); font-size: 11px; font-weight: 600; }
+.portfolioModalInfo h3 { margin: 0; color: var(--text-dark); font-size: 17px; font-weight: 700; }
+.portfolioModalInfo p { margin: 0; color: var(--text-dark-secondary); font-size: 12px; line-height: 1.7; }
+.ctnPortfolioModalInfo .ctnPortfolioTech, .portfolioModalInfo .ctnPortfolioTech { gap: 7px; }
+.portfolioModalInfo .ctnPortfolioTech span { background: rgba(37,99,235,.18); color: var(--primary-light); }
+.ctnPortfolioModalActions { display: flex; align-items: center; flex-wrap: wrap; gap: 15px; }
+.ctnPortfolioModalActions a { display: inline-flex; align-items: center; gap: 7px; color: var(--primary-light); font-size: 12px; font-weight: 600; }
+.ctnPortfolioModalActions a:hover { color: var(--text-dark); }
+
+/* SIN RESULTADOS */
+.portfolioModalEmpty { min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; color: var(--text-dark-secondary); }
+.portfolioModalEmpty h3 { margin: 0; color: var(--text-dark); font-size: 18px; }
+.portfolioModalEmpty p { margin: 0; font-size: 13px; }
+.portfolioModalEmpty button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 15px; border: none; border-radius: 8px; background: var(--primary); color: var(--text-dark); cursor: pointer; }
+
+/* TABLET */
+@media (max-width: 768px) {
+    .ctnPortfolioOverlay { padding: 12px; }
+    .ctnPortfolioModal { max-height: 95dvh; }
+    .ctnPortfolioModalHeader { padding: 22px 20px; }
+    .ctnPortfolioModalTools { padding: 16px 20px; }
+    .ctnPortfolioModalBody { padding: 20px; }
+    .ctnPortfolioModalGrid { grid-template-columns: 1fr; }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .ctnPortfolioOverlay { padding: 0; }
+    .ctnPortfolioModal { width: 100%; height: 100vh; height: 100dvh; max-height: none; border: none; border-radius: 0; }
+    .ctnPortfolioModalHeader { padding: 20px 16px 16px; }
+    .portfolioModalTitle h2 { font-size: 21px; }
+    .portfolioModalTitle p { font-size: 12px; }
+    .portfolioModalClose { width: 36px; height: 36px; }
+    .ctnPortfolioModalTools { padding: 14px 16px; }
+    .ctnPortfolioModalBody { padding: 16px; }
+    .portfolioModalInfo { padding: 16px; }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    .portfolioCard, .portfolioModalClose { transition: none; }
+}
