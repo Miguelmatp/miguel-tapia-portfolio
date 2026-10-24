@@ -1,0 +1,264 @@
+
+/* EXPERIENCIA */
+.ctnExperience {
+    width: 100%;
+    padding: 110px 0;
+    background: var(--background);
+}
+
+.ctnExperience > .ctnContenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+}
+
+/* TÍTULO */
+.ctnExperienceTitle {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.ctnExperienceTitle .sectionTag {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ctnExperienceTitle h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+}
+
+.ctnExperienceTitle h2 span {
+    color: var(--primary);
+}
+
+.ctnExperienceTitle p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* CONTENEDOR DE TARJETAS */
+.ctnExperienceGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* TARJETAS */
+.experienceCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    min-width: 0;
+    height: 100%;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.experienceCard:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-primary);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, .07);
+}
+
+/* CABECERA */
+.ctnExperienceCardHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.experienceIcon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.ctnExperienceInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    min-width: 0;
+}
+
+.experienceCompany {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ctnExperienceInfo h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* FECHA Y UBICACIÓN */
+.ctnExperienceDetails {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+}
+
+.experiencePeriod,
+.experienceLocation {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.experiencePeriod svg,
+.experienceLocation svg {
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+/* DESCRIPCIÓN */
+.experienceDescription {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* TECNOLOGÍAS */
+.ctnExperienceTech {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.ctnExperienceTech span {
+    padding: 7px 11px;
+    border-radius: 7px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* BOTÓN VER TODO */
+.experienceViewAll {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .25s ease, gap .25s ease;
+}
+
+.experienceViewAll:hover {
+    background: var(--primary-soft);
+    gap: 15px;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .ctnExperience { padding: 85px 0; }
+    .ctnExperienceGrid { gap: 16px; }
+    .experienceCard { padding: 24px; gap: 18px; }
+    .ctnExperienceCardHeader { gap: 12px; }
+    .ctnExperienceInfo h3 { font-size: 17px; }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .ctnExperience { padding: 70px 0; }
+    .ctnExperience > .ctnContenido { gap: 32px; }
+    .ctnExperienceGrid { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+    .ctnExperienceTitle h2 { font-size: clamp(32px, 6vw, 40px); }
+}
+
+/* MOBILE PEQUEÑO */
+@media (max-width: 480px) {
+    .ctnExperience { padding: 60px 0; }
+    .ctnExperienceTitle h2 { font-size: 32px; }
+    .ctnExperienceTitle p { font-size: 13px; }
+
+    .experienceCard { padding: 20px; gap: 18px; }
+    .ctnExperienceCardHeader { align-items: flex-start; gap: 12px; }
+    .experienceIcon { width: 44px; height: 44px; border-radius: 10px; }
+    .experienceCompany { font-size: 12px; }
+    .ctnExperienceInfo h3 { font-size: 16px; }
+
+    .ctnExperienceDetails { flex-direction: column; align-items: flex-start; gap: 7px; }
+    .experiencePeriod, .experienceLocation { font-size: 11px; }
+
+    .experienceDescription { font-size: 13px; }
+    .ctnExperienceTech span { font-size: 10px; padding: 6px 9px; }
+    .experienceViewAll { font-size: 12px; }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    .experienceCard,
+    .experienceViewAll {
+        transition: none;
+    }
+
+    .experienceCard:hover {
+        transform: none;
+    }
+}
+
+
+/* CERTIFICADO */
+.experienceCertificate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-primary);
+    border-radius: 9px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    transition: background .25s ease, color .25s ease;
+}
+
+.experienceCertificate:hover {
+    background: var(--primary);
+    color: var(--text-dark);
+}
