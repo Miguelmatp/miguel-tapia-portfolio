@@ -1,0 +1,232 @@
+/* SKILLS */
+.ctnSkills {
+    width: 100%;
+    padding: 110px 0;
+    background: var(--background);
+}
+
+.ctnSkills>.ctnContenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+}
+
+/* ENCABEZADO */
+.ctnSkillsHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ctnSkillsTitle {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.ctnSkillsTitle .sectionTag {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.ctnSkillsTitle h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+}
+
+.ctnSkillsTitle h2 span {
+    color: var(--primary);
+}
+
+.ctnSkillsTitle p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* GRID */
+.ctnSkillsGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* TARJETAS */
+.skillCard {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.skillCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-primary);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, .07);
+}
+
+.skillIcon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 10px;
+    border-radius: 12px;
+    background: var(--primary-soft);
+}
+
+.skillIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.skillInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.skillInfo h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.skillInfo span {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* BOTÓN */
+.skillsViewAll {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .25s ease, gap .25s ease;
+}
+
+.skillsViewAll:hover {
+    background: var(--primary-soft);
+    gap: 15px;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .ctnSkills {
+        padding: 85px 0;
+    }
+
+    .ctnSkillsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .skillCard {
+        padding: 20px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .ctnSkills {
+        padding: 70px 0;
+    }
+
+    .ctnSkills>.ctnContenido {
+        gap: 32px;
+    }
+
+    .ctnSkillsTitle h2 {
+        font-size: clamp(32px, 6vw, 40px);
+    }
+
+    .ctnSkillsGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .skillCard {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 20px 12px;
+        gap: 12px;
+    }
+
+    .skillInfo {
+        align-items: center;
+    }
+
+    .skillIcon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ctnSkills {
+        padding: 60px 0;
+    }
+
+    .ctnSkillsTitle h2 {
+        font-size: 32px;
+    }
+
+    .ctnSkillsTitle p {
+        font-size: 13px;
+    }
+
+    .skillCard {
+        padding: 18px 10px;
+    }
+
+    .skillInfo h3 {
+        font-size: 14px;
+    }
+
+    .skillInfo span {
+        font-size: 11px;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+
+    .skillCard,
+    .skillsViewAll {
+        transition: none;
+    }
+
+    .skillCard:hover {
+        transform: none;
+    }
+}
