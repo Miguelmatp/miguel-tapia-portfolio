@@ -1,61 +1,110 @@
 ﻿
-import { useState } from "react";
-import { ArrowUpRight, BriefcaseBusiness, CalendarDays, MapPin,FileDown } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { experienceList } from "../../data/experience";
-import ExperienceModal from "../modals/ExperienceModal";
 import "../../styles/experience.css";
+import { useRef } from "react";
+import type { MouseEvent } from "react";
 
 export default function Experience() {
-    const [modalOpen, setModalOpen] = useState(false);
-    const featuredExperience = experienceList.filter(item => item.featured);
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const dragRef = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false });
 
+    const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
+        if (e.button !== 0 || !scrollRef.current) return;
+        dragRef.current = { active: true, startX: e.clientX, scrollLeft: scrollRef.current.scrollLeft, moved: false };
+        scrollRef.current.style.scrollSnapType = "none";
+        scrollRef.current.style.scrollBehavior = "auto";
+    };
+
+    const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+        if (!dragRef.current.active || !scrollRef.current) return;
+        const distance = e.clientX - dragRef.current.startX;
+        if (Math.abs(distance) > 5) dragRef.current.moved = true;
+        if (!dragRef.current.moved) return;
+        scrollRef.current.scrollLeft = dragRef.current.scrollLeft - distance;
+    };
+
+    const handleMouseUp = () => {
+        if (!dragRef.current.active) return;
+        dragRef.current.active = false;
+        if (scrollRef.current) {
+            scrollRef.current.style.scrollSnapType = "";
+            scrollRef.current.style.scrollBehavior = "";
+        }
+    };
+
+    const handleClickCapture = (e: MouseEvent<HTMLDivElement>) => {
+        if (!dragRef.current.moved) return;
+        e.preventDefault();
+        e.stopPropagation();
+        dragRef.current.moved = false;
+    };
     return (
-        <section className="ctnExperience" id="experience">
-            <div className="ctnContenido">
-                <div className="ctnExperienceTitle">
-                    <span className="sectionTag">MI TRAYECTORIA</span>
-                    <h2>Experiencia <span>profesional.</span></h2>
-                    <p>Experiencia desarrollando soluciones digitales y aplicaciones web.</p>
+        <section className="experiencia" id="experiencia">
+            <div className="experienciaContainer">
+                <div className="experienciaHeader">
+                    <div className="experienciaHeading">
+                        <span className="experienciaLabel">MI TRAYECTORIA</span>
+                        <h2>Experiencia <span>profesional.</span></h2>
+                        <p>Experiencia desarrollando soluciones digitales y aplicaciones web en entornos reales.</p>
+                    </div>
                 </div>
 
-                <div className="ctnExperienceGrid">
-                    {featuredExperience.map(item => (
-                        <article className="experienceCard" key={item.id}>
-                            <div className="ctnExperienceCardHeader">
-                                <div className="experienceIcon">
-                                    <BriefcaseBusiness size={24} strokeWidth={1.8} />
+                {/* <div className="experienciaScroll" aria-label="Trayectoria profesional"> */}
+                <div
+                    ref={scrollRef}
+                    className="experienciaScroll"
+                    aria-label="Trayectoria profesional"
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseUp}
+                    onClickCapture={handleClickCapture}
+                >
+                    {experienceList.map((item) => (
+                        <div className="experienciaItem" key={item.id}>
+                            <div className="experienciaTimeline">
+                                <span className={`experienciaDot ${item.period.includes("Actualidad") ? "active" : ""}`} />
+                                <span className="experienciaFecha">{item.period}</span>
+                                {item.period.includes("Actualidad") && <span className="experienciaActual">Actualidad</span>}
+                            </div>
+
+                            <article className="experienciaCard">
+                                <div className="experienciaImagen">
+                                    {item.image && <img src={item.image} alt={item.company} loading="lazy" />}
                                 </div>
 
-                                <div className="ctnExperienceInfo">
-                                    <span className="experienceCompany">{item.company}</span>
-                                    <h3>{item.position}</h3>
-                                    <div className="ctnExperienceDetails">
-                                        <span className="experiencePeriod"><CalendarDays size={14} /> {item.period}</span>
-                                        <span className="experienceLocation"><MapPin size={14} /> {item.location}</span>
+                                <div className="experienciaInfo">
+                                    <div className="experienciaTop">
+                                        <span className="experienciaEmpresa">{item.company}</span>
+                                        <h3>{item.position}</h3>
+                                        <div className="experienciaUbicacion">
+                                            <MapPin size={15} />
+                                            <span>{item.location}</span>
+                                        </div>
                                     </div>
+
+                                    <p className="experienciaDescripcion">{item.description}</p>
+
+                                    <div className="experienciaTecnologias">
+                                        {item.technologies.map((tecnologia) => (
+                                            <span key={tecnologia}>{tecnologia}</span>
+                                        ))}
+                                    </div>
+
+                                    {item.certificate && (
+                                        <a href={item.certificate} target="_blank" rel="noopener noreferrer" className="experienciaCertificado">
+                                            Ver certificado <ArrowUpRight size={15} />
+                                        </a>
+                                    )}
                                 </div>
-                            </div>
-
-                            <p className="experienceDescription">{item.description}</p>
-
-                            <div className="ctnExperienceTech">
-                                {item.technologies.slice(0, 4).map(tech => <span key={tech}>{tech}</span>)}
-                            </div>
-                            {item.certificate && (
-                                <a href={item.certificate} target="_blank" rel="noopener noreferrer" className="experienceCertificate">
-                                    Ver certificado <FileDown size={16} />
-                                </a>
-                            )}
-                        </article>
+                            </article>
+                        </div>
                     ))}
                 </div>
 
-                <button type="button" className="experienceViewAll" onClick={() => setModalOpen(true)}>
-                    Ver toda mi experiencia <ArrowUpRight size={17} />
-                </button>
+                <p className="experienciaHint">Desliza horizontalmente para explorar mi trayectoria</p>
             </div>
-
-            <ExperienceModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
         </section>
     );
 }

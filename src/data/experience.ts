@@ -11,6 +11,7 @@ export interface ExperienceItem {
     technologies: string[];
     certificate?: string;
     featured: boolean;
+    image?: string;
 }
 
 export const experienceList: ExperienceItem[] = [
@@ -32,6 +33,7 @@ export const experienceList: ExperienceItem[] = [
         ],
         technologies: ["React", "TypeScript", "Laravel", "PHP", "MySQL", "JavaScript", "WordPress", "Git"],
         certificate: "/documents/certificates/cayetano.pdf",
+        image: "/images/logos/cayetano.webp",
         featured: true
     },
     {
@@ -50,6 +52,7 @@ export const experienceList: ExperienceItem[] = [
             "Coordinación con el equipo y presentación periódica de avances del proyecto."
         ],
         technologies: ["Acquia", "CMS", "HTML5", "CSS3", "JavaScript", "Notion"],
+        image: "/images/logos/evol.webp",
         featured: false
     },
     {
@@ -68,6 +71,7 @@ export const experienceList: ExperienceItem[] = [
             "Participación en reuniones de seguimiento y presentación de avances de los proyectos."
         ],
         technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "ASP", "Figma"],
+        image: "/images/logos/banco-nacion.webp",
         featured: true
     }
 ];

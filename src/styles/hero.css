@@ -258,24 +258,6 @@
     100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* SCROLL */
-.heroScroll {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    color: var(--text-dark-secondary);
-    font-size: 12px;
-    white-space: nowrap;
-    transform: translateX(-50%);
-    transition: color .25s ease;
-}
-
-.heroScroll:hover {
-    color: var(--text-dark);
-}
 
 /* TABLET */
 @media (max-width: 1024px) {

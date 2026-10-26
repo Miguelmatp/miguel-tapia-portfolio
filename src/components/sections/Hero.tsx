@@ -1,5 +1,5 @@
 ﻿
-import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { links } from "../../data/links";
 import "../../styles/hero.css";
 import { useEffect, useState } from "react";
@@ -81,12 +81,8 @@ useEffect(() => {
                     <div className="heroFloating heroFloatingRight" key={`right-${activeTech[1].index}-${activeTech[1].top}`} style={{ top: `${activeTech[1].top}%` }}>
                         {technologies[activeTech[1].index]}
                     </div>
-
                 </div>
-
             </div>
-
-            <a href={links.about} className="heroScroll">Conoce más <ArrowDown size={17} /></a>
         </section>
     );
 }
