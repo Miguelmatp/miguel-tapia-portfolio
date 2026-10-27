@@ -33,7 +33,7 @@ export const experienceList: ExperienceItem[] = [
         ],
         technologies: ["React", "TypeScript", "Laravel", "PHP", "MySQL", "JavaScript", "WordPress", "Git"],
         certificate: "/documents/certificates/cayetano.pdf",
-        image: "/images/logos/cayetano.webp",
+        image: "/images/logos/cayetano.png",
         featured: true
     },
     {
@@ -52,7 +52,7 @@ export const experienceList: ExperienceItem[] = [
             "Coordinación con el equipo y presentación periódica de avances del proyecto."
         ],
         technologies: ["Acquia", "CMS", "HTML5", "CSS3", "JavaScript", "Notion"],
-        image: "/images/logos/evol.webp",
+        image: "/images/logos/bancoPichincha.png",
         featured: false
     },
     {
@@ -71,7 +71,7 @@ export const experienceList: ExperienceItem[] = [
             "Participación en reuniones de seguimiento y presentación de avances de los proyectos."
         ],
         technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "ASP", "Figma"],
-        image: "/images/logos/banco-nacion.webp",
+        image: "/images/logos/bancoNacion.png",
         featured: true
     }
 ];

@@ -63,10 +63,9 @@ export default function Experience() {
                 >
                     {experienceList.map((item) => (
                         <div className="experienciaItem" key={item.id}>
-                            <div className="experienciaTimeline">
+                            <div className={`experienciaTimeline ${item.period.includes("Actualidad") ? "actual" : ""}`}>
                                 <span className={`experienciaDot ${item.period.includes("Actualidad") ? "active" : ""}`} />
                                 <span className="experienciaFecha">{item.period}</span>
-                                {item.period.includes("Actualidad") && <span className="experienciaActual">Actualidad</span>}
                             </div>
 
                             <article className="experienciaCard">
