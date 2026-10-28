@@ -14,7 +14,7 @@ export const links = {
     phone: "tel:+51937311762",
     whatsapp: "https://wa.me/51937311762",
 
-    cv: "/documents/cv/cv-miguel-tapia.pdf"
+    cv: "/documents/CV_MiguelTapia.pdf"
 };
 
 export const navigationLinks = [

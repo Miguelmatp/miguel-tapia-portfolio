@@ -91,7 +91,7 @@ export default function Experience() {
             <div className="experienciaContainer">
                 <div className="experienciaHeader">
                     <div className="experienciaHeading">
-                        <span className="experienciaLabel">MI TRAYECTORIA</span>
+                        {/* <span className="experienciaLabel">MI TRAYECTORIA</span> */}
                         <h2>Experiencia <span>profesional.</span></h2>
                         <p>Experiencia desarrollando soluciones digitales y aplicaciones web en entornos reales.</p>
                     </div>
@@ -121,7 +121,7 @@ export default function Experience() {
 
                                     {item.certificate && (
                                         <a href={item.certificate} target="_blank" rel="noopener noreferrer" className="experienciaCertificado">
-                                            Ver certificado <ArrowUpRight size={15} />
+                                            Ver certificado <ArrowUpRight size={24} />
                                         </a>
                                     )}
                                 </div>

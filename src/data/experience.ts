@@ -32,7 +32,7 @@ export const experienceList: ExperienceItem[] = [
             "Despliegue y mantenimiento de aplicaciones web utilizando Git y plataformas de hosting."
         ],
         technologies: ["React", "TypeScript", "Laravel", "PHP", "MySQL", "JavaScript", "WordPress", "Git", "Github", "Zapier", "Microsoft", "Notion"],
-        certificate: "/documents/certificates/cayetano.pdf",
+        certificate: "/documents/certificates/work/UPCH.pdf",
         image: "/images/logos/cayetano.png",
         featured: true
     },
@@ -92,6 +92,7 @@ export const experienceList: ExperienceItem[] = [
             "Coordinación con el equipo de diseño gráfico para la implementación de recursos visuales.",
             "Participación en reuniones de seguimiento y presentación de avances de los proyectos."
         ],
+        certificate: "/documents/certificates/work/BN.pdf",
         technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Figma"],
         image: "/images/logos/bancoNacion.png",
         featured: true

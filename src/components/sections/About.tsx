@@ -1,5 +1,5 @@
 ﻿
-import { ArrowUpRight, BriefcaseBusiness, Code2, GraduationCap } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, Code2, Rocket } from "lucide-react";
 import { links } from "../../data/links";
 import "../../styles/about.css";
 
@@ -11,13 +11,13 @@ const highlights = [
     },
     {
         icon: BriefcaseBusiness,
-        title: "Experiencia real",
-        description: "Proyectos corporativos y soluciones digitales."
+        title: "Soluciones digitales",
+        description: "Integraciones y automatizaciones."
     },
     {
-        icon: GraduationCap,
-        title: "Formación continua",
-        description: "Aprendizaje constante de nuevas tecnologías."
+        icon: Rocket,
+        title: "Aprendizaje continuo",
+        description: "Siempre explorando nuevas tecnologías."
     }
 ];
 

@@ -1,0 +1,1609 @@
+    * {
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        line-height: 1.2;
+    }
+    
+    .ctnfechaExamen{
+        flex-direction: column;
+        max-width: 450px;
+        border-radius: 1rem;
+        overflow: hidden
+    }
+    .ctnfechaExamen .top{
+        width: 100%;
+        padding: 0.5rem 1rem;
+        background: var(--primary);
+        box-sizing: border-box;
+        color: white;
+    }
+    .ctnfechaExamen .top p{
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .ctnfechaExamen .bottom{
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+/* POPUP */
+#labelCheckbox {
+    font-size: 1.15rem !important;
+    color: black;
+}
+
+#labelCheckbox a {
+    color: black;
+    font-size: 1.15rem !important;
+}
+
+#labelCheckbox a:hover,
+#labelCheckbox a:visited,
+#labelCheckbox a:active {
+    color: black;
+    font-size: 1.15rem !important;
+}
+
+.terminos {
+    column-gap: 1rem;
+}
+
+#popup {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#popup h3 {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#popup h3,
+#popup p {
+    color: black !important;
+    padding: 0;
+    margin: 0;
+}
+
+#popup p {
+    font-size: 0.75rem;
+}
+
+.ctnPopup {
+    position: relative;
+    padding: 2rem 2.5rem;
+    width: 50rem;
+    max-height: 90%;
+    overflow-y: auto;
+    max-width: 90%;
+    background-color: white;
+    box-sizing: border-box;
+    height: auto;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 0 1rem gray;
+}
+
+.ctnCerrar {
+    height: 0;
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+.ctnPopup .cerrarPop {
+    position: absolute;
+    top: -1rem;
+    right: -1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 50%;
+    border: 1px solid gray;
+    cursor: pointer;
+    font-weight: 600;
+    background: gray;
+    color: white;
+}
+
+#my-form {
+    height: 40rem;
+}
+
+/* FIN DE POPUP */
+    :root {
+        --primary: #FF0C29;
+        --rojo: #FF0C29;
+        --vino: #971A36;
+        --txt: #000;
+        --black: #000;
+        --white: #fff;
+        --gray: #eee;
+        --formulario-primario: #8d8d8d;
+        --formulario-borde: black;
+        /* COLORES CARRERA */
+        --gestion: #2663D9;
+        --salud: #d73dff;
+        --ingenieria: #35ef6a;
+        --educacion: #00c99c;
+        --ciencia: #4ac0ff;
+        /* COLORES CARRERA */
+    }
+
+    p {
+        margin: 0 !important;
+        color: black;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 2rem;
+        color: black;
+    }
+    .bannerSuperior img {
+        height: 5rem !important;
+        width: auto !important;
+    }
+    /* CARGANDO */
+
+    .ctnCargando {
+        z-index: 147;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--rojo);
+        overflow: hidden;
+    }
+
+    .escudoBack {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 40rem;
+        width: 100%;
+        z-index: 0;
+        fill: white;
+    }
+
+    .ctnCargando img {
+        width: 28rem;
+        height: auto;
+        max-width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    /* CARGANDO */
+
+    /* BLOQUE 1 */
+
+    .ctnBloque1 {
+        position: relative;
+        overflow: hidden;
+        z-index: 20;
+        box-sizing: border-box;
+        background: white;
+    }
+
+    .bloque1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .banner {
+        position: relative;
+        height: 100dvh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        z-index: 3;
+        box-sizing: border-box;
+        color: var(--white);
+    }
+
+    .ctnImgBanner {
+        /* display: none; */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner .imagenBack {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 0;
+        position: absolute;
+    }
+
+    .bannerSuperior {
+        display: flex;
+        flex-direction: column;
+        position: inherit;
+        z-index: 2;
+        gap: 0.3rem;
+        max-width: 73rem;
+        width: 100%;
+        color: var(--white);
+    }
+
+
+    .bannerSuperior .ctnLogoBeca18 {
+        height: 5.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .bannerSuperior .title img {
+        height: 100% !important;
+    }
+
+    .bannerSuperior p {
+        color: var(--white);
+        font-size: 1.5rem;
+    }
+
+    .scrolling-content .textoContent span {
+        color: var(--white);
+    }
+
+    h1 {
+        color: black;
+        font-size: 2.3rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .bannerInferior {
+        display: flex;
+        flex-direction: column;
+        position: inherit;
+        z-index: 1;
+        width: 100%;
+        max-width: 73rem;
+    }
+
+    .ctnfechaExamen {
+        display: flex;
+        color: var(--white);
+    }
+
+    .ctnfechaExamen .asunto {
+        flex: 1;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .ctnfechaExamen .fecha {
+        flex: 1;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 5px;
+        font-size: 22px;
+        font-weight: 600;
+        background: white !important;
+        color: black !important;
+    }
+
+    .siluetaEscudo {
+        position: absolute;
+        right: 0rem;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+        fill: var(--primary);
+    }
+
+
+    /* FORMULARIO */
+    .backFormulario {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        padding: 5rem 0;
+        background-color: var(--vino);
+    }
+    .career-content{
+        width: 100%;
+    }
+    .backFormulario .escudo {
+        fill: var(--rojo);
+        transform: rotate(-30deg);
+        position: absolute;
+        bottom: -20%;
+        left: -60%;
+        z-index: 1;
+    }
+
+    .ctnFormulario {
+        position: inherit;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+        padding: 1.5rem 1.5rem 1rem !important;
+        background-color: var(--white);
+        box-sizing: border-box;
+        border-radius: 2rem;
+        gap: 1rem;
+        max-width: 24rem;
+    }
+
+    .ctnFormulario .title,
+    .ctnFormulario b {
+        font-size: 1.3rem !important;
+        text-align: center;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+    }
+
+    form>.double__form,
+    form>.input-field {
+        margin-bottom: 0.65rem;
+    }
+
+    form .double__form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    form .input-field {
+        position: relative;
+        width: 100%;
+    }
+
+    form .input-field input,
+    form .input-field select {
+        width: 100%;
+        border-radius: 0.3rem;
+        padding: 0.5rem 0.8rem;
+        border: 1px solid var(--black);
+        font-size: 0.8rem;
+        box-sizing: border-box;
+        background-color: var(--white);
+        height: 34px;
+        /* evita que el texto verticalmente se desplace */
+    }
+
+
+    form .input-field select:invalid {
+        color: var(--formulario-primario);
+    }
+
+    /* FORMULARIO INVALIDO */
+
+    /* ❌ INPUT inválido (con texto ingresado pero no válido) */
+    form .input-field input:invalid:not(:focus):not(:placeholder-shown) {
+        border-color: var(--rojo);
+    }
+
+    /* ❌ LABEL rojo si el input es inválido y hay algo escrito */
+    form .input-field input:invalid:not(:focus):not(:placeholder-shown)~label {
+        top: 0;
+        left: 0.5rem;
+        font-size: 0.7rem;
+        color: var(--rojo);
+        font-weight: 600;
+        background-color: #fff;
+        padding: 1px 5px;
+        white-space: nowrap;
+        border-radius: 0.5rem;
+    }
+
+    /* FIN DE FORMULARIO INVALIDO */
+
+
+
+    form .input-field input.invalid,
+    form .input-field select.invalid {
+        border: 1px solid var(--rojo) !important;
+    }
+
+    form .input-field input.invalid~label,
+    form .input-field select.invalid~label {
+        top: 0;
+        left: 0.5rem;
+        font-size: 0.7rem;
+        color: var(--rojo);
+        font-weight: 600;
+        background-color: #fff;
+        padding: 1px 5px;
+        white-space: nowrap;
+        border-radius: 0.5rem;
+    }
+
+    form .input-field label {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        color: var(--formulario-primario);
+        font-size: 0.85rem;
+        transform: translate(0, -50%);
+        pointer-events: none;
+        background-color: transparent;
+        transition: all 0.3s ease;
+    }
+
+    form .input-field select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23000000" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 0.3rem center;
+        background-size: 1rem;
+        padding-right: 2.2rem;
+        color: black;
+        /* color de texto por defecto */
+    }
+
+    /* FLECHA */
+
+    form .input-field input:focus,
+    form .input-field input:valid,
+    form .input-field select:focus,
+    form .input-field select:valid {
+        outline: none;
+        border: 1px solid var(--formulario-borde);
+    }
+
+    form .input-field input:focus~label,
+    form .input-field input:valid~label,
+    form .input-field select:focus~label,
+    form .input-field select:valid~label {
+        white-space: nowrap;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        padding: 1px 5px;
+        top: 0;
+        left: 0.5rem;
+        font-size: 0.7rem;
+        color: var(--formulario-primario);
+        font-weight: 600;
+    }
+
+    form .ctnCheckbox {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    form .ctnCheckbox p {
+        width: 100%;
+        font-size: 0.7rem;
+    }
+
+    form .ctnCheckbox p a {
+        text-decoration: underline !important;
+        font-size: 0.7rem !important;
+        color: black !important;
+    }
+
+    form .ctnCheckbox p span {
+        text-decoration: underline !important;
+        cursor: pointer;
+    }
+
+    form .ctnCheckbox input {
+        width: 20px !important;
+    }
+
+    form .bloque1FormButton button {
+        padding: .4rem 1.5rem;
+        margin: 0;
+        color: var(--white);
+        background-color: var(--black);
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 1rem;
+    }
+
+    /* FIN DE FORMULARIO */
+
+    /* CINTA */
+    .cintaMobible {
+        position: inherit;
+        z-index: 11;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        justify-content: center;
+        bottom: 0;
+        height: 3.5rem;
+        gap: 20px;
+        font-weight: 500;
+        width: 100%;
+        background-color: black;
+    }
+
+    .textoContent {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        gap: 20px;
+        color: white;
+        padding: 0 20px 0 0;
+    }
+
+    /* FIN DE CINTA */
+
+    /* CAPTCHA */
+
+    .ctnCaptcha {
+        max-height: 5rem;
+    }
+
+    .captcha {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        height: 4.1rem !important;
+    }
+
+    .g-recaptcha {
+        height: auto;
+        transform: scale(0.63);
+    }
+
+    /*FIN DE CAPTCHA*/
+    /* FIN DE BLOQUE 1 */
+
+
+    /* B2 */
+    .B2{
+        background-color: var(--primary) !important;
+    }
+
+    /* FIN DE B2 */
+    /* BLOQUE  NEWCARRERAS */
+    .ctnBloqueD.NewCarreras {
+        background: var(--gray);
+    }
+
+    .ctnBloqueD.NewCarreras .bloqueD {
+        gap: 1rem;
+    }
+
+    .NewCarreras .descuentosItem {
+        perspective: 1000px;
+        height: 16rem;
+        background-color: transparent;
+    }
+
+    .NewCarreras .suma {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='35px' stroke-width='100px' stroke='white' viewBox='0 -960 960 960' width='35px' fill='white'><path d='M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z'/></svg>");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .NewCarreras .suma.Negro{
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='35px' stroke-width='100px' stroke='black' viewBox='0 -960 960 960' width='35px' fill='black'><path d='M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z'/></svg>");
+    }
+
+    .ctnBloqueD.NewCarreras .descuentosItem {
+        padding: 0;
+        background: transparent;
+    }
+
+    .ctnBloqueD.NewCarreras .ctnDescuentos {
+        gap: 1rem;
+    }
+
+    .card-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.999s;
+    }
+
+    .NewCarreras .descuentosItem:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    .card-front {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        padding: 2rem;
+        box-sizing: border-box;
+        transform: rotateY(0deg);
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .card-front .suma {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .card-front .suma svg {
+        stroke-width: 100px;
+        stroke: white;
+    }
+
+    .card-back {
+        background-color: white;
+        color: black;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        border-radius: 10px;
+        justify-content: center;
+        transform: rotateY(180deg);
+    }
+
+    /*DESPLEGABLE  */
+    .ctnMasCarreras {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .titleDesplegable {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        width: fit-content;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .titleDesplegable svg {
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(0deg);
+    }
+
+    .titleDesplegable.active svg {
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(-180deg);
+    }
+
+    .titleDesplegable h3 {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    .ctnCluster {
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        height: auto;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+        overflow: hidden;
+        padding-left: 1rem;
+    }
+
+    .ctnCluster.active {
+        max-height: 100rem;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .clusterItem .title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        display: flex;
+        position: relative;
+    }
+    .clusterItem .carreras{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    } 
+    .clusterItem .title>svg {
+        position: absolute;
+        left: -0.5rem;
+        z-index: -1;
+    }
+
+    .custerDobleItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 650px) {
+        .bannerSuperior img {
+            height: 3.5rem !important;
+        }
+        .ctnCluster {
+            padding: 0;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 0.5rem;
+        }
+
+        .clusterItem,
+        .custerDobleItem {
+            width: 100%;
+            align-items: center;
+        }
+
+        .custerDobleItem {
+            gap: 0.5rem;
+        }
+
+        .clusterItem {
+            max-width: 300px;
+        }
+
+        .clusterItem .title {
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        .clusterItem .carreras {
+            max-height: 0;
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+            margin: 0.5rem;
+        }
+
+        .clusterItem .carreras.active {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 100rem;
+        }
+
+        .clusterItem.salud .title {
+            background-color: var(--salud);
+            color: white;
+        }
+
+        .clusterItem.educacion .title {
+            background-color: var(--educacion);
+        }
+
+        .clusterItem.ciencias .title {
+            background-color: var(--ciencia);
+        }
+
+        .clusterItem.ingenieria .title {
+            background-color: var(--ingenieria);
+        }
+
+        .clusterItem.gestion .title {
+            background-color: var(--gestion);
+            color: white;
+        }
+
+        .clusterItem .title>svg {
+            display: none;
+        }
+
+    }
+
+    /* FIN DE BLOQUE  NEWCARRERAS */
+
+
+    /* BLOQUE D */
+    .ctnBloqueD {
+        background-color: #A5E6FA;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 5.5rem 2rem;
+        z-index: 2;
+    }
+
+    .ctnBloqueD .bloqueD {
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 73rem;
+    }
+
+    .ctnBloqueD .ctnDescuentos {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        cursor: grab;
+        position: static;
+        padding: 2rem;
+        width: calc(100% + 4rem);
+        box-sizing: border-box;
+    }
+    .ctnBloqueD.Dps .descuentosItem{
+        border: 2px solid black;
+    }
+    .ctnBloqueD .descuentosItem {
+        border-left-width: 8px;
+        user-select: none;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+        width: 16rem;
+        height: 15.5rem;
+        padding: 1rem 1rem 2rem;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background: var(--white);
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+    }
+    /* .ctnBloqueD .descuentosItem {
+        user-select: none;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+        width: 16rem;
+        padding: 1rem 1rem 2rem;
+        box-sizing: border-box;
+        background: white;
+        border-radius: 1rem;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        
+    } */
+
+    .ctnBloqueD.Dps .descuentosItem {
+        width: 14rem;
+        height: 15rem;
+    }
+
+    .descuentosItem .img {
+        height: 7rem;
+        padding: 1rem 0;
+        box-sizing: border-box;
+    }
+
+    .descuentosItem .img img {
+        height: 100%;
+        position: relative;
+
+    }
+
+    .descuentosItem .title {
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .descuentosItem .subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .ctnBloqueD .ctnTxt p {
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .ctnBloqueD .terminos {
+        font-style: italic;
+        font-size: 0.8rem;
+        color: black;
+    }
+
+    /* Animación vertical tipo "marea" */
+    @keyframes mareaY {
+        from {
+            transform: translateY(-0.8rem);
+        }
+
+        /* arriba 1rem */
+        to {
+            transform: translateY(0.8rem);
+        }
+
+        /* abajo 1rem */
+    }
+
+    .ctnDescuentos .descuentosItem .img img {
+        display: block;
+        transform-origin: center;
+        animation: mareaY 2s ease-in-out infinite alternate;
+        will-change: transform;
+    }
+
+    /* Alterna la dirección en los pares: empieza abajo y sube */
+    .ctnDescuentos .descuentosItem:nth-child(even) .img img {
+        animation-direction: alternate;
+    }
+
+    .ctnDescuentos .descuentosItem:nth-child(odd) .img img {
+        animation-direction: alternate-reverse;
+    }
+
+
+    /* Accesibilidad: respeta usuarios con reducción de movimiento */
+    @media (prefers-reduced-motion: reduce) {
+        .ctnDescuentos .descuentosItem .img img {
+            animation: none;
+            transform: none;
+        }
+    }
+
+    .elementoCielo {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background-image: url("https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/beca18/fondoCielo.png");
+        background-repeat: repeat-x;
+        background-position: top center;
+        background-size: auto 100%;
+        width: 100%;
+    }
+    
+    .ctnNubes {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        /* Para que no bloquee clics en elementos debajo */
+    }
+
+    .nube {
+        position: absolute;
+        top: 0;
+        will-change: transform;
+    }
+
+    /* Animación general: de fuera de la derecha a fuera de la izquierda */
+    @keyframes moverNube {
+        0% {
+            transform: translateX(105vw);
+            /* arranca un poco fuera de la pantalla */
+        }
+
+        100% {
+            transform: translateX(-110vw);
+            /* termina un poco fuera por la izquierda */
+        }
+    }
+
+    /* Ahora personalizamos cada nube para que vayan intercaladas */
+    .nube1 {
+        top: 10%;
+        animation: moverNube 60s linear infinite;
+    }
+
+    .nube2 {
+        top: 25%;
+        animation: moverNube 80s linear infinite;
+        animation-delay: -20s;
+        /* arranca desfasada */
+    }
+
+    .nube3 {
+        top: 40%;
+        animation: moverNube 100s linear infinite;
+        animation-delay: -50s;
+    }
+
+    .nube4 {
+        top: 55%;
+        animation: moverNube 90s linear infinite;
+        animation-delay: -10s;
+    }
+
+    .nube5 {
+        top: 70%;
+        animation: moverNube 120s linear infinite;
+        animation-delay: -70s;
+    }
+
+    .bottonesTop {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: -5px;
+    }
+    .bottonesBottom {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        bottom: -5px;
+    }
+    .bottonesBottom, .bottonesTop{
+        width: calc(100% + 10px);
+        left: -5px;
+    }
+
+    .bottonesTop .cuadro:nth-child(1) {
+        border-bottom: 8px solid black;
+        border-right: 8px solid black;
+    }
+
+    .bottonesTop .cuadro:nth-child(2) {
+        border-bottom: 5px solid black;
+        border-left: 4px solid black;
+    }
+
+    .bottones .cuadro {
+        width: 15px;
+        height: 15px;
+        background-color: #A5E6FA !important;
+    }
+
+    .bottonesBottom .cuadro:nth-child(1) {
+        border-top: 8px solid black;
+        border-right: 8px solid black;
+    }
+
+    .bottonesBottom .cuadro:nth-child(2) {
+        border-top: 8px solid black;
+        border-left: 4px solid black;
+    }
+
+    /* FIN DE BLOQUED */
+
+
+    /* BLOQUE4 */
+
+    .ctnBloque4 {
+        position: relative;
+        background: #A5E6FA;
+        height: 100vh;
+    }
+    
+    /* FIN DE BLOQUE4 */
+
+    /* FOOTER */
+    footer {
+        user-select: none;
+        position: relative;
+        z-index: 15 !important;
+        background-color: var(--black);
+        padding: 1rem 2rem !important;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ctnFooter {
+        max-width: 73rem;
+        color: var(--white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .ctnFooter .logoUpch {
+        display: none;
+        width: 13rem;
+    }
+
+    .ctnFooter .escudoUpch {
+        width: 3.5rem;
+    }
+
+    .ctnFooter .txtFooter {
+        font-size: 0.85rem;
+        font-weight: 400;
+    }
+
+    /* FIN DE FOOTER */
+
+    .txtIcono {
+        position: relative;
+    }
+
+    .icono {
+        position: relative;
+    }
+
+    .icono::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        transform: translate(0, -50%);
+        height: 3rem;
+        width: 3rem;
+        left: 0.5rem;
+        z-index: -1;
+    }
+
+    .flecha::before {
+        background: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/beca18/mensaje.webp') center/cover no-repeat;
+    }
+
+    .trofeo::before {
+        left: 2rem;
+        top: 1rem;
+        background: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/beca18/trofeo.webp') center/cover no-repeat;
+    }
+
+
+
+    @media (min-width: 1250px) {
+        .ctnBloqueD .ctnDescuentos {
+            width: 100%;
+            padding: 2rem 0;
+        }
+    }
+
+    @media(min-width: 1000px) {
+        .scrollWrap {
+            gap: 1.5rem;
+        }
+
+        /* BANNER */
+        .banner {
+            position: initial
+        }
+
+        .bannerSuperior {
+            position: relative;
+            gap: 2rem;
+        }
+
+        .bannerSuperior header {
+            position: absolute;
+            top: -6.5rem;
+        }
+
+        .bannerSuperior .title {
+            display: flex;
+            flex-direction: column;
+            gap: 0rem;
+        }
+
+
+        .bannerSuperior p {
+            font-size: 1.8rem;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 2.7rem;
+        }
+
+        .ctnBloque1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            padding: 0 2rem;
+            min-height: 55rem;
+        }
+
+        .ctnBloque1 .bloque1 {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 73rem;
+            min-height: 50rem;
+            width: 100%;
+        }
+
+        .ctnBloque1 .bloque1 .banner {
+            padding: 0;
+            width: 33rem;
+            height: 40rem;
+        }
+
+        .ctnBloque1 .bloque1 .backFormulario {
+            padding: 0;
+            width: fit-content;
+            height: fit-content;
+            background-color: transparent;
+            z-index: 11;
+        }
+
+        .backFormulario .escudo {
+            display: none;
+        }
+
+        .imagenBack {
+            display: none !important;
+        }
+
+        .imagenBack.desktop {
+            bottom: 3rem;
+            left: 0;
+            display: flex !important;
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ctnFormulario {
+            width: 100%;
+            padding: 2.5rem 1.5rem 1.5rem;
+        }
+
+        .cintaMobible {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* FIN DE BANNER  */
+        .g-recaptcha {
+            transform: scale(0.65);
+        }
+
+        .bannerSuperior p {
+            font-size: 1.6rem;
+        }
+    }
+
+    .referencial {
+        font-size: 0.80rem;
+        width: 29rem;
+        max-width: 80%;
+    }
+
+    @media(min-width: 650px) {
+        .ctnFooter {
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .ctnFooter .escudoUpch {
+            display: none;
+        }
+
+        .ctnFooter .logoUpch {
+            display: flex;
+        }
+
+        .ctnFooter .txtFooter {
+            text-align: end;
+        }
+    }
+
+    .responsive {
+        display: none;
+    }
+
+    @media(max-width: 650px) {
+        .ctnfechaExamen{
+            box-shadow: 0 0 8px rgba(0,0,0,0.4);
+        }
+        .ctnfechaExamen p {
+            font-size: 1rem !important;
+        }
+        .ctnfechaExamen .asunto{
+            padding: 0.5rem 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .bloque2 {
+            gap: 1.5rem
+        }
+
+        .subtitle {
+            font-size: 1rem;
+        }
+
+        .trofeo::before {
+            left: 1.5rem;
+            top: 1.5rem;
+        }
+
+        .ctnBloqueD .descuentosItem {
+            padding: 1.5rem 1.5rem 3.5rem;
+        }
+
+        .icono::before {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .ctnTanoPixel .tanoPixel {
+            width: 8rem;
+            height: 15rem;
+        }
+
+        .ctnTanoPixel .luz {
+            height: 2rem;
+        }
+
+        .ctnCardVertical .itemCard .contenidoCard .title {
+            font-size: 1.5rem;
+        }
+
+        .responsive {
+            display: flex;
+        }
+
+        .ctnCardVertical {
+            max-width: 90%;
+            height: 17rem;
+
+        }
+
+        .ctnCardVertical .itemCard .txt {
+            font-size: 0.9rem;
+        }
+
+        .ctnBloqueD.NewCarreras .ctnDescuentos {
+            gap: 1rem !important;
+        }
+
+        .ctnBloqueD.NewCarreras .descuentosItem {
+            padding: 0 !important;
+        }
+
+        .progressStack {
+            right: -1rem !important;
+        }
+
+        .descuentosItem .img {
+            height: 5.5rem;
+            padding: 0 0 1rem;
+        }
+
+        .titleDesplegable h3 {
+            font-size: 1.2rem;
+        }
+
+        .clusterItem h3 {
+            padding: 0.5rem 0;
+            margin: 0;
+        }
+
+        .progressStack {
+            top: 30%;
+        }
+
+        .backFormulario .escudo {
+            display: none;
+        }
+    }
+
+
+    /* PRUEBA DE INDICADORES */
+    /* Asegúrate que el contenedor padre permita posicionar los indicadores */
+    .ctnCardApiladas {
+        position: relative;
+    }
+
+    /* Columna de líneas verticales (una por card) */
+    .progressStack {
+        position: absolute;
+        right: -1.5rem;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    /* Cada línea */
+    .progressLine {
+        width: 4px;
+        height: 22px;
+        border-radius: 2px;
+        background: white;
+        /* inactiva */
+        opacity: 0.8;
+        transition: background .25s, transform .25s, opacity .25s, box-shadow .25s;
+    }
+
+    /* Línea activa (la del card actual) */
+    .progressLine.active {
+        background: #111;
+        /* color de énfasis (se sobrescribe por JS si quieres) */
+        opacity: 1;
+        transform: scaleX(1.15);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .08);
+    }
+
+    /* Si quieres “acumulado” (todas las anteriores pintadas), el JS pondrá esta clase: */
+    .progressLine.done {
+        background: white;
+        /* color de progreso */
+        opacity: 1;
+    }
+
+    .lineaRoja {
+        fill: #ff0c29;
+    }
+
+    .bordeNegro {
+        fill-rule: evenodd;
+    }
+
+    .birrete {
+        position: relative;
+        z-index: 1
+    }
+
+    .birrete.buno::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 3rem;
+        width: 3rem;
+        left: -3.5rem;
+        background: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/beca18/birrete.webp') center/cover no-repeat;
+        z-index: -1;
+    }
+
+    .birrete.bdos::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 3rem;
+        width: 3rem;
+        left: 0.5rem;
+        background: url('https://upch-repo-comercial.s3.dualstack.us-east-1.amazonaws.com/beca18/birrete.webp') center/cover no-repeat;
+        z-index: -1;
+    }
+
+    /* BTNFLOTANTE */
+    #button-block3 {
+        white-space: nowrap;
+        position: fixed;
+        padding: 1rem 1.5rem;
+        bottom: 1rem;
+        background: #000;
+        color: #fff;
+        border-radius: 5rem;
+        border: 2px solid white;
+        z-index: 11;
+        right: 1rem;
+        cursor: pointer;
+        color: white;
+        z-index: 11;
+        max-width: 100%
+    }
+
+    #button-block3 p {
+        color: white;
+        font-size: 0.95rem;
+        font-weight: 700;
+    }
+    .botonDirigidor {
+    padding: .8rem 1.2rem;
+    margin: 0;
+    color: var(--white);
+    background-color: var(--black);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    display: flex
+;
+    font-weight: 650;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+    @media(max-width: 1000px) {
+        #button-block3 {
+            right: auto;
+            left: 50%;
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+
+        .txtIcono .bdos {
+            display: none;
+        }
+
+        .birrete.buno::before {
+            left: 0rem;
+            top: -1rem;
+        }
+        .siluetaEscudo {
+            z-index: 0;
+            right: -20rem !important;
+        }
+    }

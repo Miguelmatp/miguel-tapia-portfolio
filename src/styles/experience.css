@@ -82,12 +82,16 @@
     gap: 28px;
     width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     padding: 0 5%;
     scrollbar-width: none;
+    cursor: grab;
+    user-select: none;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 90%, transparent);
 }
 
 .experienciaScroll::-webkit-scrollbar {
@@ -191,6 +195,8 @@
     min-width: 0;
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -202,16 +208,16 @@
     display: block;
     border-radius: 12px;
 }
-.experienciaImagen.certificado img {
+/* .experienciaImagen.certificado img {
     height: calc(100% - 3.5rem);
-}
+} */
 .experienciaImagen a{
     background-color: var(--primary);
     padding: 10px 20px;
     position: absolute;
-    width: 100%;
+    width: fit-content;
     border-radius: 10px;
-    bottom: 0;
+    bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -233,7 +239,7 @@
     gap: 1rem;
     overflow-y: auto;
     padding: 10px 0;
-    mask-image: linear-gradient(to bottom, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 6%, black 92%, transparent);
 }
 
 
@@ -311,38 +317,6 @@
     margin-top: 2px;
 }
 
-/* .experienciaTecnologias {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: auto;
-}
-
-.experienciaTecnologias span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    padding: 8px;
-    border: 1px solid #24518d;
-    border-radius: 9px;
-    background: #102b4e;
-    transition: background .2s ease, border-color .2s ease, transform .2s ease;
-}
-
-.experienciaTecnologias span:hover {
-    background: #173b69;
-    border-color: #438dff;
-    transform: translateY(-3px);
-}
-
-.experienciaTecnologias img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-} */
-
 .experienciaTecnologias {
     width: 100%;
     min-width: 0;
@@ -411,31 +385,26 @@
     font-size: 12px;
     margin-top: 16px;
 }
-
-/* Tablets */
-
-@media (max-width: 1024px) {
-    .experienciaItem {
-        flex: 0 0 75%;
-    }
-}
-
 /* Moviles */
 
 @media (max-width: 768px) {
     .experiencia {
-        padding: 65px 0;
+        padding: 40px 0;
     }
 
     .experienciaHeader {
         flex-direction: column;
         align-items: flex-start;
-        margin-bottom: 40px;
         gap: 20px;
+        padding: 0 20px;
     }
 
     .experienciaItem {
-        flex: 0 0 88%;
+        flex: 0 0 23rem;
+        gap: 1rem;
+    }
+    .experienciaImagen img{    
+        object-position: 50% 50%;
     }
 
     .experienciaCard {
@@ -463,6 +432,13 @@
         padding: 6px 8px;
         font-size: 10px;
     }
+    .experienciaInfo .ctnInfo{
+        height: 240px;
+        gap: 6px;
+    }
+    .experienciaResponsabilidades{
+        gap: 5px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -473,11 +449,6 @@
     .experienciaCard, .experienciaBtn {
         transition: none;
     }
-}
-
-.experienciaScroll {
-    cursor: grab;
-    user-select: none;
 }
 
 .experienciaScroll:active {
