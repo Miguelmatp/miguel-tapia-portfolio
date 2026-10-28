@@ -2,8 +2,55 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { experienceList } from "../../data/experience";
 import "../../styles/experience.css";
-import { useRef } from "react";
+import { Check } from "lucide-react";
+// import { useRef } from "react";
 import type { MouseEvent } from "react";
+import { useEffect, useRef, useState } from "react";
+
+function Tecnologias({ technologies }: { technologies: string[] }) {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [overflow, setOverflow] = useState(false);
+
+    useEffect(() => {
+        const container = containerRef.current;
+        const content = contentRef.current;
+        if (!container || !content) return;
+
+        const verificar = () => setOverflow(content.scrollWidth > container.clientWidth + 1);
+        const observer = new ResizeObserver(verificar);
+
+        observer.observe(container);
+        observer.observe(content);
+        verificar();
+
+        return () => observer.disconnect();
+    }, [technologies]);
+
+    return (
+        <div className={`experienciaTecnologias ${overflow ? "scrollActivo" : ""}`} ref={containerRef}>
+            <div className="experienciaTecnologiasTrack">
+                <div className="experienciaTecnologiasGrupo" ref={contentRef}>
+                    {technologies.map((tecnologia) => (
+                        <span key={tecnologia} title={tecnologia}>
+                            <img src={`/images/icons/technologies/${tecnologia.toLowerCase()}.svg`} alt={tecnologia} loading="lazy" draggable={false} />
+                        </span>
+                    ))}
+                </div>
+
+                {overflow && (
+                    <div className="experienciaTecnologiasGrupo" aria-hidden="true">
+                        {technologies.map((tecnologia) => (
+                            <span key={tecnologia} title={tecnologia}>
+                                <img src={`/images/icons/technologies/${tecnologia.toLowerCase()}.svg`} alt="" loading="lazy" draggable={false} />
+                            </span>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
 
 export default function Experience() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -69,8 +116,14 @@ export default function Experience() {
                             </div>
 
                             <article className="experienciaCard">
-                                <div className="experienciaImagen">
+                                <div className={`experienciaImagen ${item.certificate ? "certificado" : ""}`}>
                                     {item.image && <img src={item.image} alt={item.company} loading="lazy" />}
+
+                                    {item.certificate && (
+                                        <a href={item.certificate} target="_blank" rel="noopener noreferrer" className="experienciaCertificado">
+                                            Ver certificado <ArrowUpRight size={15} />
+                                        </a>
+                                    )}
                                 </div>
 
                                 <div className="experienciaInfo">
@@ -82,20 +135,26 @@ export default function Experience() {
                                             <span>{item.location}</span>
                                         </div>
                                     </div>
-
-                                    <p className="experienciaDescripcion">{item.description}</p>
-
-                                    <div className="experienciaTecnologias">
-                                        {item.technologies.map((tecnologia) => (
-                                            <span key={tecnologia}>{tecnologia}</span>
-                                        ))}
+                                    <div className="ctnInfo">
+                                        <p className="experienciaDescripcion">{item.description}</p>
+                                        <ul className="experienciaResponsabilidades">
+                                            {item.responsibilities.map((responsibility, index) => (
+                                                <li key={index}>
+                                                    <Check size={15} />
+                                                    <span>{responsibility}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
 
-                                    {item.certificate && (
-                                        <a href={item.certificate} target="_blank" rel="noopener noreferrer" className="experienciaCertificado">
-                                            Ver certificado <ArrowUpRight size={15} />
-                                        </a>
-                                    )}
+                                    {/* <div className="experienciaTecnologias">
+                                        {item.technologies.map((tecnologia) => (
+                                            <span key={tecnologia} title={tecnologia}>
+                                                <img src={`/images/icons/technologies/${tecnologia.toLowerCase()}.svg`} alt={tecnologia} loading="lazy" draggable={false} />
+                                            </span>
+                                        ))}
+                                    </div> */}
+                                    <Tecnologias technologies={item.technologies} />
                                 </div>
                             </article>
                         </div>

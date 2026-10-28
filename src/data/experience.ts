@@ -31,15 +31,37 @@ export const experienceList: ExperienceItem[] = [
             "Implementación de dashboards, filtros, reportes y sistemas de autenticación con control de acceso.",
             "Despliegue y mantenimiento de aplicaciones web utilizando Git y plataformas de hosting."
         ],
-        technologies: ["React", "TypeScript", "Laravel", "PHP", "MySQL", "JavaScript", "WordPress", "Git"],
+        technologies: ["React", "TypeScript", "Laravel", "PHP", "MySQL", "JavaScript", "WordPress", "Git", "Github", "Zapier", "Microsoft", "Notion"],
         certificate: "/documents/certificates/cayetano.pdf",
         image: "/images/logos/cayetano.png",
         featured: true
     },
+    
+    {
+        id: "emhidas",
+        company: "Emhidas",
+        position: "Desarrollador Web",
+        period: "06/03/2025 - 01/05/2025",
+        location: "Miraflores, Lima, Perú",
+        employmentType: "Servicio por proyecto",
+        description: "Desarrollo, optimización y mantenimiento de plataformas web, implementando mejoras de rendimiento, rediseño de interfaces y automatizaciones para la gestión de precios y campañas comerciales.",
+        responsibilities: [
+            "Refactorización, limpieza y optimización de código para mejorar la organización, mantenibilidad y reutilización de componentes.",
+            "Rediseño y actualización de interfaces web responsive, mejorando la presentación visual y la experiencia de usuario.",
+            "Implementación y mantenimiento de herramientas de tracking para el seguimiento de interacciones y comportamiento de usuarios.",
+            "Desarrollo de lógica reutilizable para automatizar precios y aplicar descuentos porcentuales en campañas comerciales.",
+            "Actualización y mantenimiento de precios, productos y contenidos en la plataforma web.",
+            "Automatización de tablas de tallas para facilitar su actualización y visualización en las páginas de productos."
+        ],
+        technologies: ["HTML", "CSS", "JavaScript", "Notion", "WordPress", "Figma", "Php", "Git", "Github"],
+        image: "/images/logos/emhidas.png",
+        featured: false
+    },
+
     {
         id: "evol",
         company: "Evol / Banco Pichincha",
-        position: "Desarrollador Front-End",
+        position: "Desarrollador Front-End - Servicio",
         period: "06/02/2025 - 05/03/2025",
         location: "Miraflores, Lima, Perú",
         employmentType: "Servicio por proyecto",
@@ -51,7 +73,7 @@ export const experienceList: ExperienceItem[] = [
             "Documentación y seguimiento de avances mediante Notion.",
             "Coordinación con el equipo y presentación periódica de avances del proyecto."
         ],
-        technologies: ["Acquia", "CMS", "HTML5", "CSS3", "JavaScript", "Notion"],
+        technologies: ["HTML", "CSS", "JavaScript", "Notion"],
         image: "/images/logos/bancoPichincha.png",
         featured: false
     },
@@ -70,7 +92,7 @@ export const experienceList: ExperienceItem[] = [
             "Coordinación con el equipo de diseño gráfico para la implementación de recursos visuales.",
             "Participación en reuniones de seguimiento y presentación de avances de los proyectos."
         ],
-        technologies: ["HTML5", "CSS3", "JavaScript", "jQuery", "ASP", "Figma"],
+        technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Figma"],
         image: "/images/logos/bancoNacion.png",
         featured: true
     }
