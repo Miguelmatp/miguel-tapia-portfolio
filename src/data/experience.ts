@@ -33,7 +33,7 @@ export const experienceList: ExperienceItem[] = [
         ],
         technologies: ["React", "TypeScript", "Laravel", "PHP", "MySQL", "JavaScript", "WordPress", "Git", "Github", "Zapier", "Microsoft", "Notion"],
         certificate: "/documents/certificates/work/UPCH.pdf",
-        image: "/images/logos/cayetano.png",
+        image: "/images/logos/cayetano.webp",
         featured: true
     },
     
@@ -54,7 +54,7 @@ export const experienceList: ExperienceItem[] = [
             "Automatización de tablas de tallas para facilitar su actualización y visualización en las páginas de productos."
         ],
         technologies: ["HTML", "CSS", "JavaScript", "Notion", "WordPress", "Figma", "Php", "Git", "Github"],
-        image: "/images/logos/emhidas.png",
+        image: "/images/logos/emhidas.webp",
         featured: false
     },
 
@@ -74,7 +74,7 @@ export const experienceList: ExperienceItem[] = [
             "Coordinación con el equipo y presentación periódica de avances del proyecto."
         ],
         technologies: ["HTML", "CSS", "JavaScript", "Notion"],
-        image: "/images/logos/bancoPichincha.png",
+        image: "/images/logos/bancoPichincha.webp",
         featured: false
     },
     {
@@ -94,7 +94,7 @@ export const experienceList: ExperienceItem[] = [
         ],
         certificate: "/documents/certificates/work/BN.pdf",
         technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Figma"],
-        image: "/images/logos/bancoNacion.png",
+        image: "/images/logos/bancoNacion.webp",
         featured: true
     }
 ];

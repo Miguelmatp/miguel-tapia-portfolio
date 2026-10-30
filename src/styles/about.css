@@ -3,14 +3,36 @@
 .ctnAbout {
     width: 100%;
     padding: 110px 0;
-    background: var(--background);
+    background: white;
 }
-
 .ctnAbout > .ctnContenido {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     align-items: center;
     gap: 110px;
+}
+.ctnAbout .ctnSkills{
+    display: flex;
+    gap: 1rem;
+    background-color: white;
+}
+.ctnAbout .ctnSkills .ctnSkill{
+    display: flex;
+    gap: 10px;
+}
+.ctnAbout .ctnSkills .ctnSkill .ctnImg{
+    color: var(--primary);
+    background: var(--primary-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width:  50px;
+    border-radius: 10px;
+}
+.ctnContenido .ctnSkills .ctnSkill .ctnTxt p{
+    font-size: 12px;
+    color: var(--text-secondary);
 }
 
 /* INFORMACIÓN */

@@ -90,7 +90,7 @@
     flex-shrink: 0;
     padding: 10px;
     border-radius: 12px;
-    background: var(--primary-soft);
+    /* background: var(--primary-soft); */
 }
 
 .skillIcon img {

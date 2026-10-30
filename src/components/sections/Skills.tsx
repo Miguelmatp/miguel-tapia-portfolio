@@ -14,7 +14,7 @@ export default function Skills() {
             <div className="ctnContenido">
                 <div className="ctnSkillsHeader">
                     <div className="ctnSkillsTitle">
-                        <span className="sectionTag">MI STACK TECNOLÓGICO</span>
+                        {/* <span className="sectionTag">MI STACK TECNOLÓGICO</span> */}
                         <h2>Tecnologías que <span>utilizo.</span></h2>
                         <p>Herramientas y tecnologías con las que desarrollo soluciones digitales.</p>
                     </div>
