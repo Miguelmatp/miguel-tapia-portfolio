@@ -1,0 +1,59 @@
+
+/* OVERLAY */
+.ctnSkillsOverlay { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(5,12,26,.78); backdrop-filter: blur(8px); }
+
+/* MODAL */
+.ctnSkillsModal { width: min(100%,850px); max-height: 90vh; max-height: 90dvh; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--border-dark); border-radius: 20px; background: var(--background-dark); color: var(--text-dark); box-shadow: 0 30px 100px rgba(0,0,0,.35); }
+
+/* HEADER */
+.ctnSkillsModalHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 28px 30px 20px; border-bottom: 1px solid var(--border-dark); }
+.skillsModalTitle { display: flex; flex-direction: column; gap: 8px; }
+.skillsModalTitle > span { color: var(--primary-light); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+.skillsModalTitle h2 { margin: 0; color: var(--text-dark); font-size: clamp(22px,2.5vw,30px); }
+.skillsModalTitle p { margin: 0; color: var(--text-dark-secondary); font-size: 13px; line-height: 1.6; }
+.skillsModalClose { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: 1px solid var(--border-dark); border-radius: 10px; background: rgba(255,255,255,.05); color: var(--text-dark); cursor: pointer; }
+.skillsModalClose:hover { background: rgba(255,255,255,.12); }
+
+/* BUSCADOR */
+.ctnSkillsModalSearch { display: flex; align-items: center; gap: 10px; padding: 12px 15px; border: 1px solid var(--border-dark); border-radius: 10px; background: rgba(255,255,255,.05); color: var(--text-dark-secondary); margin: 20px 30px; }
+.ctnSkillsModalSearch:focus-within { border-color: var(--primary-light); }
+.ctnSkillsModalSearch input { width: 100%; min-width: 0; border: 0; outline: none; background: transparent; color: var(--text-dark); font-size: 13px; }
+.ctnSkillsModalSearch input::placeholder { color: var(--text-dark-secondary); }
+
+/* CONTENIDO */
+.ctnSkillsModalBody { flex: 1; min-height: 0; padding: 0 30px 30px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--primary) transparent; }
+.ctnSkillsModalGrid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.skillsModalCard { display: flex; align-items: center; gap: 13px; min-width: 0; padding: 17px; border: 1px solid var(--border-dark); border-radius: 11px; background: rgba(255,255,255,.04); }
+.skillsModalIcon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.skillsModalIcon img { width: 100%; height: 100%; object-fit: contain; }
+.skillsModalInfo { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.skillsModalInfo h3 { margin: 0; color: var(--text-dark); font-size: 14px; font-weight: 600; }
+.skillsModalInfo span { color: var(--text-dark-secondary); font-size: 11px; }
+.skillsModalEmpty { color: var(--text-dark-secondary); font-size: 13px; text-align: center; }
+
+/* TABLET */
+@media (max-width: 768px) {
+    .ctnSkillsOverlay { padding: 12px; }
+    .ctnSkillsModal { max-height: 95dvh; }
+    .ctnSkillsModalHeader { padding: 22px 20px; }
+    .ctnSkillsModalSearch { margin: 16px 20px; }
+    .ctnSkillsModalBody { padding: 0 20px 20px; }
+    .ctnSkillsModalGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .ctnSkillsOverlay { padding: 0; }
+    .ctnSkillsModal { width: 100%; height: 100dvh; max-height: none; border: none; border-radius: 0; }
+    .ctnSkillsModalHeader { padding: 20px 16px; }
+    .skillsModalTitle h2 { font-size: 21px; }
+    .skillsModalTitle p { font-size: 12px; }
+    .skillsModalClose { width: 36px; height: 36px; }
+    .ctnSkillsModalSearch { margin: 14px 16px; }
+    .ctnSkillsModalBody { padding: 0 16px 16px; }
+    .ctnSkillsModalGrid { gap: 9px; }
+    .skillsModalCard { padding: 12px; gap: 8px; }
+    .skillsModalIcon { width: 30px; height: 30px; }
+    .skillsModalInfo h3 { font-size: 12px; }
+    .skillsModalInfo span { font-size: 10px; }
+}

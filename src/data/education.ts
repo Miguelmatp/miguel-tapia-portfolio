@@ -25,7 +25,7 @@ export const educationList: EducationItem[] = [
         level: "Bachiller",
         location: "S.J.L. - Lima",
         locationUrl: "https://maps.app.goo.gl/3BfQbpjB1og4QabC9",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/estudios/bachiller-upn.pdf",
+        document: "/documents/certificates/education/UPN-Bachiller.pdf",
         featured: true
     },
     {
@@ -38,7 +38,7 @@ export const educationList: EducationItem[] = [
         hours: 72,
         location: "Surco - Lima",
         locationUrl: "https://maps.app.goo.gl/ZmKVaHEGKSX4CZfz7",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/certus-desarrollo-web-front-end.pdf",
+        document: "/documents/certificates/education/certus-desarrollo-web-front-end.pdf",
         featured: true
     },
     {
@@ -50,7 +50,7 @@ export const educationList: EducationItem[] = [
         level: "Educación superior universitaria - Egresado",
         location: "S.J.L. - Lima",
         locationUrl: "https://maps.app.goo.gl/3BfQbpjB1og4QabC9",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/estudios/egresado-upn.pdf",
+        document: "/documents/certificates/education/UPN-Egresado.pdf",
         featured: false
     },
 
@@ -63,7 +63,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 18,
         date: "20 de mayo de 2024",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/platzi/platzi-diploma-transformaciones-transiciones-css.pdf",
+        document: "/documents/certificates/education/platzi/platzi-diploma-transformaciones-transiciones-css.pdf",
         featured: false
     },
     {
@@ -74,7 +74,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 26,
         date: "20 de mayo de 2024",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/platzi/platzi-diploma-sass.pdf",
+        document: "/documents/certificates/education/platzi/platzi-diploma-sass.pdf",
         featured: false
     },
     {
@@ -85,7 +85,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 25,
         date: "20 de mayo de 2024",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/platzi/platzi-diploma-mobile-first.pdf",
+        document: "/documents/certificates/education/platzi/platzi-diploma-mobile-first.pdf",
         featured: false
     },
     {
@@ -96,7 +96,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 23,
         date: "20 de mayo de 2024",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/platzi/platzi-diploma-html-css.pdf",
+        document: "/documents/certificates/education/platzi/platzi-diploma-html-css.pdf",
         featured: false
     },
     {
@@ -107,7 +107,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 16,
         date: "20 de mayo de 2024",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/platzi/platzi-diploma-html-practico.pdf",
+        document: "/documents/certificates/education/platzi/platzi-diploma-html-practico.pdf",
         featured: false
     },
     {
@@ -118,7 +118,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 15,
         date: "12 de abril de 2024",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/platzi/platzi-diploma-frontend-developer.pdf",
+        document: "/documents/certificates/education/platzi/platzi-diploma-frontend-developer.pdf",
         featured: false
     },
 
@@ -131,7 +131,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 40,
         date: "30 de abril de 2022",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/movistar/movistar-programacion-js.pdf",
+        document: "/documents/certificates/education/movistar/movistar-programacion-js.pdf",
         featured: false
     },
     {
@@ -142,7 +142,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 30,
         date: "30 de abril de 2022",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/movistar/movistar-dise%C3%B1o-web-html5-css.pdf",
+        document: "/documents/certificates/education/movistar/movistar-dise%C3%B1o-web-html5-css.pdf",
         featured: false
     },
     {
@@ -153,20 +153,20 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 30,
         date: "17 de abril de 2022",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/movistar/movistar-wordpress.pdf",
+        document: "/documents/certificates/education/movistar/movistar-wordpress.pdf",
         featured: false
     },
-    {
-        id: "movistar-cv",
-        title: "Diseño de CV de alto impacto",
-        institution: "Fundación Telefónica Movistar",
-        period: "2022",
-        type: "course",
-        hours: 30,
-        date: "16 de abril de 2022",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/movistar/movistar-cv-alto-impacto.pdf",
-        featured: false
-    },
+    // {
+    //     id: "movistar-cv",
+    //     title: "Diseño de CV de alto impacto",
+    //     institution: "Fundación Telefónica Movistar",
+    //     period: "2022",
+    //     type: "course",
+    //     hours: 30,
+    //     date: "16 de abril de 2022",
+    //     document: "/documents/certificates/education/movistar/movistar-cv-alto-impacto.pdf",
+    //     featured: false
+    // },
     {
         id: "movistar-office-intermedio",
         title: "Office Intermedio",
@@ -175,18 +175,7 @@ export const educationList: EducationItem[] = [
         type: "course",
         hours: 25,
         date: "7 de abril de 2022",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/movistar/movistar-office-intermedio.pdf",
-        featured: false
-    },
-    {
-        id: "movistar-office-basico",
-        title: "Office Básico",
-        institution: "Fundación Telefónica Movistar",
-        period: "2022",
-        type: "course",
-        hours: 20,
-        date: "31 de marzo de 2022",
-        document: "https://matp1709.github.io/cv-MiguelTapia/doc/cursos/movistar/movistar-office-basico.pdf",
+        document: "/documents/certificates/education/movistar/movistar-office-intermedio.pdf",
         featured: false
     }
 ];

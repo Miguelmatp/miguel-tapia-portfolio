@@ -80,7 +80,7 @@
 .experienciaScroll {
     display: flex;
     gap: 28px;
-    width: 100%;
+    width: calc(100% + 4rem);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;

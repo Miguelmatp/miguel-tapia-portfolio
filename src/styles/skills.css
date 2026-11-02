@@ -1,15 +1,16 @@
+
 /* SKILLS */
 .ctnSkills {
     width: 100%;
-    padding: 110px 0;
+    padding: 100px 0;
     background: var(--background);
 }
 
-.ctnSkills>.ctnContenido {
+.ctnSkills > .ctnContenido {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 45px;
+    gap: 32px;
 }
 
 /* ENCABEZADO */
@@ -24,15 +25,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     text-align: center;
-}
-
-.ctnSkillsTitle .sectionTag {
-    color: var(--primary);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
 }
 
 .ctnSkillsTitle h2 {
@@ -51,46 +45,83 @@
 .ctnSkillsTitle p {
     margin: 0;
     color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: var(--subtitle);
+    line-height: 1.7;
+}
+
+/* FILTROS */
+.ctnSkillsFilters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ctnSkillsFilters button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 9px 18px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.ctnSkillsFilters button:hover {
+    color: var(--primary);
+    border-color: var(--border-primary);
+}
+
+.ctnSkillsFilters button.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-dark);
 }
 
 /* GRID */
 .ctnSkillsGrid {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(5, minmax(185px, 1fr));
+    gap: 14px;
 }
 
 /* TARJETAS */
 .skillCard {
+    min-width: 0;
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 25px;
+    gap: 12px;
+    padding: 15px;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 12px;
     background: var(--surface);
-    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
 .skillCard:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     border-color: var(--border-primary);
-    box-shadow: 0 12px 35px rgba(37, 99, 235, .07);
+    box-shadow: 0 10px 28px rgba(37, 99, 235, .07);
 }
 
+/* ICONOS */
 .skillIcon {
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    padding: 10px;
-    border-radius: 12px;
-    /* background: var(--primary-soft); */
+    padding: 5px;
 }
 
 .skillIcon img {
@@ -99,7 +130,9 @@
     object-fit: contain;
 }
 
+/* INFORMACIÓN */
 .skillInfo {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -108,125 +141,81 @@
 .skillInfo h3 {
     margin: 0;
     color: var(--text-primary);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 700;
 }
 
 .skillInfo span {
     color: var(--text-secondary);
-    font-size: 12px;
+    font-size: 10px;
 }
 
-/* BOTÓN */
-.skillsViewAll {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 13px 22px;
-    border: 1px solid var(--border-primary);
-    border-radius: 10px;
-    background: var(--surface);
-    color: var(--primary);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background .25s ease, gap .25s ease;
-}
-
-.skillsViewAll:hover {
-    background: var(--primary-soft);
-    gap: 15px;
+/* LAPTOP */
+@media (max-width: 1200px) {
+    .ctnSkillsGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 /* TABLET */
-@media (max-width: 1024px) {
-    .ctnSkills {
-        padding: 85px 0;
-    }
+@media (max-width: 950px) {
+    .ctnSkills { padding: 85px 0; }
 
     .ctnSkillsGrid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .skillCard {
-        padding: 20px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .ctnSkills {
-        padding: 70px 0;
+    .ctnSkills { padding: 70px 0; }
+
+    .ctnSkills > .ctnContenido { gap: 26px; }
+    .ctnSkillsTitle h2 { font-size: clamp(30px, 6vw, 40px); }
+
+    .ctnSkillsFilters {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        scrollbar-width: none;
     }
 
-    .ctnSkills>.ctnContenido {
-        gap: 32px;
-    }
-
-    .ctnSkillsTitle h2 {
-        font-size: clamp(32px, 6vw, 40px);
-    }
+    .ctnSkillsFilters::-webkit-scrollbar { display: none; }
 
     .ctnSkillsGrid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        gap: 10px;
     }
 
-    .skillCard {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding: 20px 12px;
-        gap: 12px;
-    }
-
-    .skillInfo {
-        align-items: center;
-    }
-
-    .skillIcon {
-        width: 48px;
-        height: 48px;
-    }
+    .skillCard { padding: 13px; gap: 10px; }
+    .skillIcon { width: 35px; height: 35px; }
 }
 
+/* MOBILE PEQUEÑO */
 @media (max-width: 480px) {
-    .ctnSkills {
-        padding: 60px 0;
-    }
+    .ctnSkills { padding: 60px 0; }
 
-    .ctnSkillsTitle h2 {
-        font-size: 32px;
-    }
+    .ctnSkillsTitle h2 { font-size: 30px; }
+    .ctnSkillsTitle p { font-size: 12px; }
 
-    .ctnSkillsTitle p {
-        font-size: 13px;
-    }
+    .skillCard { padding: 12px 9px; gap: 8px; }
+    .skillIcon { width: 30px; height: 30px; padding: 2px; }
+    .skillInfo h3 { font-size: 12px; }
+    .skillInfo span { font-size: 10px; }
 
-    .skillCard {
-        padding: 18px 10px;
-    }
-
-    .skillInfo h3 {
-        font-size: 14px;
-    }
-
-    .skillInfo span {
+    .ctnSkillsFilters button {
+        padding: 8px 14px;
         font-size: 11px;
     }
 }
 
 /* ACCESIBILIDAD */
 @media (prefers-reduced-motion: reduce) {
-
     .skillCard,
-    .skillsViewAll {
+    .ctnSkillsFilters button {
         transition: none;
     }
 
-    .skillCard:hover {
-        transform: none;
-    }
+    .skillCard:hover { transform: none; }
 }
