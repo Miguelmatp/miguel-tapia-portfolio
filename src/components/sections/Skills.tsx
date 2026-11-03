@@ -15,7 +15,6 @@ const matchesCategory = (category: TechnologyCategory, filter: SkillFilter) => {
 
 export default function Skills() {
     const [filter, setFilter] = useState<SkillFilter>("Todos");
-    const displayedTechnologies = technologyList.filter(tech => matchesCategory(tech.category, filter));
 
     return (
         <section className="ctnSkills" id="skills">
@@ -34,8 +33,8 @@ export default function Skills() {
                 </div>
 
                 <div className="ctnSkillsGrid">
-                    {displayedTechnologies.map(tech => (
-                        <article className="skillCard" key={tech.id}>
+                    {technologyList.map(tech => (
+                        <article className={`skillCard ${matchesCategory(tech.category, filter) ? "" : "inactive"}`} key={tech.id}>
                             <div className="skillIcon"><img src={tech.icon} alt="" loading="lazy" /></div>
                             <div className="skillInfo">
                                 <h3>{tech.name}</h3>

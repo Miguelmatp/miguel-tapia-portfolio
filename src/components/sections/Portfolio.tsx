@@ -13,7 +13,7 @@ export default function Portfolio() {
         <section className="ctnPortfolio" id="portfolio">
             <div className="ctnContenido">
                 <div className="ctnPortfolioTitle">
-                    <span className="sectionTag">MI PORTAFOLIO</span>
+                    {/* <span className="sectionTag">MI PORTAFOLIO</span> */}
                     <h2>Proyectos <span>destacados.</span></h2>
                     <p>Una selección de aplicaciones, plataformas y experiencias digitales que he desarrollado.</p>
                 </div>

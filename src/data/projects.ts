@@ -19,7 +19,8 @@ export const projectsList: ProjectItem[] = [
         title: "Own Media",
         category: "Sistema web",
         description: "Plataforma de gestión de presupuestos, campañas, envíos y reportes.",
-        image: "/images/projects/own-media.webp",
+        // image: "/images/projects/own-media.webp",
+        image: "/images/logos/bancoNacion.webp",
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
         featured: true
     },
@@ -28,7 +29,8 @@ export const projectsList: ProjectItem[] = [
         title: "Sistema de Ingresantes",
         category: "Sistema web",
         description: "Sistema de seguimiento de postulantes, gestión de leads y asesores.",
-        image: "/images/projects/ingresantes.webp",
+        // image: "/images/projects/ingresantes.webp",
+        image: "/images/logos/bancoNacion.webp",
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
         featured: true
     },
@@ -37,7 +39,8 @@ export const projectsList: ProjectItem[] = [
         title: "Backoffice",
         category: "Sistema web",
         description: "Plataforma para la gestión de registros, documentación y reportes.",
-        image: "/images/projects/backoffice.webp",
+        // image: "/images/projects/backoffice.webp",
+        image: "/images/logos/bancoNacion.webp",
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
         featured: true
     }

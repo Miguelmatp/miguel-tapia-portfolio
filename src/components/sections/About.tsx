@@ -67,11 +67,10 @@ export default function About() {
             if (startTime === null) startTime = timestamp;
 
             const progress = Math.min((timestamp - startTime) / ANIMATION_DURATION, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
 
             const nextCounts = skills.map(item => {
                 const target = Math.max(1, item.title);
-                return Math.min(target, 1 + Math.floor((target - 1) * eased));
+                return Math.min(target, 1 + Math.floor((target - 1) * progress));
             });
 
             if (nextCounts.some((value, index) => value !== previousCounts[index])) {

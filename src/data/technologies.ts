@@ -16,16 +16,21 @@ export const technologyList: Technology[] = [
     { id: "html", name: "HTML5", category: "Frontend", icon: "/images/icons/technologies/html.svg", featured: true },
     { id: "css", name: "CSS3", category: "Frontend", icon: "/images/icons/technologies/css.svg", featured: true },
     { id: "tailwind", name: "Tailwind CSS", category: "Frontend", icon: "/images/icons/technologies/tailwind.svg", featured: true },
+    { id: "bootstrap", name: "Bootstrap", category: "Frontend", icon: "/images/icons/technologies/bootstrap.svg", featured: false },
+    { id: "angular", name: "Angular", category: "Frontend", icon: "/images/icons/technologies/angular.svg", featured: false },
+    { id: "vite", name: "Vite", category: "Frontend", icon: "/images/icons/technologies/vite.svg", featured: true },
     { id: "laravel", name: "Laravel", category: "Backend", icon: "/images/icons/technologies/laravel.svg", featured: true },
     { id: "php", name: "PHP", category: "Backend", icon: "/images/icons/technologies/php.svg", featured: true },
     { id: "mysql", name: "MySQL", category: "Base de datos", icon: "/images/icons/technologies/mysql.svg", featured: true },
     { id: "wordpress", name: "WordPress", category: "CMS", icon: "/images/icons/technologies/wordpress.svg", featured: true },
     { id: "git", name: "Git", category: "Control de versiones", icon: "/images/icons/technologies/git.svg", featured: true },
+    { id: "github", name: "GitHub", category: "Control de versiones", icon: "/images/icons/technologies/github.svg", featured: false },
+    { id: "notion", name: "Notion", category: "Herramientas", icon: "/images/icons/technologies/notion.svg", featured: false },
+    { id: "postman", name: "Postman", category: "Herramientas", icon: "/images/icons/technologies/postman.svg", featured: false },
+    // { id: "vscode", name: "Visual Studio Code", category: "Herramientas", icon: "/images/icons/technologies/vscode.svg", featured: false },
+    { id: "vercel", name: "Vercel", category: "Herramientas", icon: "/images/icons/technologies/vercel.svg", featured: false },
     { id: "figma", name: "Figma", category: "Diseño", icon: "/images/icons/technologies/figma.svg", featured: true },
-
-    { id: "bootstrap", name: "Bootstrap", category: "Frontend", icon: "/images/icons/technologies/bootstrap.svg", featured: false },
-    { id: "angular", name: "Angular", category: "Frontend", icon: "/images/icons/technologies/angular.svg", featured: false },
-    { id: "github", name: "GitHub", category: "Control de versiones", icon: "/images/icons/technologies/github.svg", featured: false }
+    { id: "illustrator", name: "Illustrator", category: "Diseño", icon: "/images/icons/technologies/illustrator.svg", featured: false },
 ];
 
 export const technologies = technologyList.map(item => item.name);

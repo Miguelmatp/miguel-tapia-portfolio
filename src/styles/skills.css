@@ -104,9 +104,13 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     background: var(--surface);
-    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    opacity: 1;
+    transition: opacity .3s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
-
+/* TECNOLOGÍAS QUE NO COINCIDEN CON EL FILTRO */
+.skillCard.inactive {
+    opacity: 0.2;
+}
 .skillCard:hover {
     transform: translateY(-3px);
     border-color: var(--border-primary);
