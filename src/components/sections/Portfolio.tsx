@@ -1,58 +1,124 @@
 ﻿
 import { useState } from "react";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
-import { projectsList } from "../../data/projects";
+import { technologyList } from "../../data/technologies";
+import { ArrowRight, ArrowUpRight, AppWindow, Check, ExternalLink, Layers3, LayoutGrid, Link2, Monitor, X } from "lucide-react";
+import { projectsList, type ProjectCategory, type ProjectItem } from "../../data/projects";
 import PortfolioModal from "../modals/PortfolioModal";
 import "../../styles/portfolio.css";
 
+type ProjectFilter = "Todos" | ProjectCategory;
+
+const filters = [
+    { label: "Todos", icon: null },
+    { label: "Sistema web", icon: Monitor },
+    { label: "Landing page", icon: AppWindow },
+    { label: "Aplicación", icon: LayoutGrid },
+    { label: "Integración", icon: Link2 }
+] as const;
+
+const categoryIcons = {
+    "Sistema web": Monitor,
+    "Landing page": AppWindow,
+    "Aplicación": LayoutGrid,
+    "Integración": Link2
+};
+
 export default function Portfolio() {
-    const [modalOpen, setModalOpen] = useState(false);
+    const [filter, setFilter] = useState<ProjectFilter>("Todos");
+    const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+    const [showAll, setShowAll] = useState(false);
+
     const featuredProjects = projectsList.filter(item => item.featured);
+    const availableProjects = showAll ? projectsList : featuredProjects;
+    const displayedProjects = availableProjects.filter(item => filter === "Todos" || item.category === filter);
 
     return (
         <section className="ctnPortfolio" id="portfolio">
             <div className="ctnContenido">
                 <div className="ctnPortfolioTitle">
-                    {/* <span className="sectionTag">MI PORTAFOLIO</span> */}
+                    <span className="portfolioTag"><Layers3 size={15} /> PORTAFOLIO</span>
                     <h2>Proyectos <span>destacados.</span></h2>
-                    <p>Una selección de aplicaciones, plataformas y experiencias digitales que he desarrollado.</p>
+                    <p>Una selección de aplicaciones, sistemas y landings que he desarrollado.</p>
                 </div>
 
-                <div className="ctnPortfolioGrid">
-                    {featuredProjects.map(item => (
-                        <article className="portfolioCard" key={item.id}>
-                            <div className="portfolioImage">
-                                <img src={item.image} alt={`Vista del proyecto ${item.title}`} loading="lazy" />
-                                <span className="portfolioCategory">{item.category}</span>
-                            </div>
-
-                            <div className="ctnPortfolioInfo">
-                                <div className="ctnPortfolioDescription">
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
-
-                                <div className="ctnPortfolioTech">
-                                    {item.technologies.slice(0, 4).map(tech => <span key={tech}>{tech}</span>)}
-                                </div>
-
-                                {(item.url || item.repository) && (
-                                    <div className="ctnPortfolioActions">
-                                        {item.url && <a href={item.url} target="_blank" rel="noopener noreferrer"><ExternalLink size={16} /> Ver proyecto</a>}
-                                        {item.repository && <a href={item.repository} target="_blank" rel="noopener noreferrer"><img src="/images/icons/github.svg" alt="" /> Código</a>}
-                                    </div>
-                                )}
-                            </div>
-                        </article>
+                <div className="ctnPortfolioFilters" role="group" aria-label="Filtrar proyectos">
+                    {filters.map(({ label, icon: Icon }) => (
+                        <button type="button" key={label} className={filter === label ? "active" : ""} aria-pressed={filter === label} onClick={() => setFilter(label)}>
+                            {Icon && <Icon size={17} strokeWidth={1.8} />}
+                            {label === "Sistema web" ? "Sistemas web" : label === "Landing page" ? "Landing pages" : label === "Aplicación" ? "Aplicaciones" : label === "Integración" ? "Integraciones" : label}
+                        </button>
                     ))}
                 </div>
 
-                <button type="button" className="portfolioViewAll" onClick={() => setModalOpen(true)}>
-                    Ver todos los proyectos <ArrowUpRight size={17} />
-                </button>
+                <div className="ctnPortfolioGrid">
+                    {displayedProjects.map(item => {
+                        const Icon = categoryIcons[item.category];
+
+                        return (
+                            <article className="portfolioCard" key={item.id}>
+                                <div className="portfolioImage">
+                                    <img src={item.image} alt={`Vista de ${item.title}`} loading="lazy" />
+                                    <span className="portfolioCategory"><Icon size={14} /> {item.category}</span>
+                                </div>
+
+                                <div className="ctnPortfolioInfo">
+                                    <div className="ctnPortfolioDescription">
+                                        <h3>{item.title}</h3>
+                                        <p>{item.description}</p>
+                                    </div>
+
+                                    <div className="ctnPortfolioTech">
+                                        {item.technologies.slice(0, 3).map(tech => {
+                                            const technology = technologyList.find(t => t.name === tech);
+
+                                            return (
+                                                <span key={tech}>
+                                                    {technology && <img src={technology.icon} alt="" />}
+                                                    {tech}
+                                                </span>
+                                            );
+                                        })}
+                                    </div>
+
+                                    <ul className="ctnPortfolioFeatures">
+                                        {item.features.slice(0, 3).map(feature => (
+                                            <li key={feature}><Check size={15} /><span>{feature}</span></li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="ctnPortfolioActions">
+                                        <button type="button" className="portfolioDetails" onClick={() => setSelectedProject(item)}>
+                                            Ver detalles <ArrowRight size={16} />
+                                        </button>
+
+                                        {item.url && (
+                                            <a className="portfolioVisit" href={item.url} target="_blank" rel="noopener noreferrer">
+                                                Ver proyecto <ExternalLink size={15} />
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </article>
+                        );
+                    })}
+                </div>
+
+                {displayedProjects.length === 0 && (
+                    <div className="portfolioEmpty">
+                        <p>No hay proyectos en esta categoría por el momento.</p>
+                        <button type="button" onClick={() => setFilter("Todos")}><X size={15} /> Limpiar filtro</button>
+                    </div>
+                )}
+
+                {projectsList.some(item => !item.featured) && (
+                    <button type="button" className="portfolioViewAll" onClick={() => setShowAll(value => !value)}>
+                        {showAll ? "Ver proyectos destacados" : "Ver todos los proyectos"}
+                        <ArrowUpRight size={18} />
+                    </button>
+                )}
             </div>
 
-            <PortfolioModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+            <PortfolioModal project={selectedProject} onClose={() => setSelectedProject(null)} />
         </section>
     );
 }

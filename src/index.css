@@ -96,6 +96,9 @@ a {
   }
 }
 @media (max-width: 500px) {
+  :root{
+    --description: 14px;
+  }
   .ctnMain > section{
     padding: 3rem 20px;
   }
