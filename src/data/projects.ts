@@ -141,11 +141,9 @@ export const projectsList: ProjectItem[] = [
         category: "Landing page",
         description: "Invitación digital interactiva con animaciones, música y diseño personalizado.",
         detail: "Invitación digital personalizada para una celebración de quince años, desarrollada con React, TypeScript y CSS. Incluye una interfaz temática con elementos decorativos, animaciones, música con letras sincronizadas, itinerario e información del evento. El diseño se adaptó a dispositivos móviles y de escritorio para ofrecer una experiencia visual e interactiva.",
-        image: "/images/projects/flavia.webp",
+        image: "/images/projects/invitacion.png",
         images: [
-            "/images/projects/flavia.webp",
-            "/images/projects/flavia-2.webp",
-            "/images/projects/flavia-3.webp"
+            "/images/projects/invitacion.png"
         ],
         technologies: ["React", "TypeScript", "CSS3", "Vite"],
         features: [
