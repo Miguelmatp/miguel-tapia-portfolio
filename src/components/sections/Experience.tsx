@@ -87,7 +87,7 @@ export default function Experience() {
         dragRef.current.moved = false;
     };
     return (
-        <section className="experiencia" id="experiencia">
+        <section className="experiencia" id="experience">
             <div className="experienciaContainer">
                 <div className="experienciaHeader">
                     <div className="experienciaHeading">

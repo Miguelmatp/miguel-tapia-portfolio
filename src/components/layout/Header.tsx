@@ -42,7 +42,7 @@ export default function Header() {
                 </nav>
 
                 <div className="ctnActions">
-                    <a href={links.contact} className="btnContact">Hablemos <ArrowUpRight size={17} /></a>
+                    <a target="_blank" href={links.whatsapp} className="btnContact">Hablemos <ArrowUpRight size={17} /></a>
                     <button type="button" className="btnMenuMobile" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} aria-controls="main-navigation">
                         {menuOpen ? <X size={23} /> : <Menu size={23} />}
                     </button>
