@@ -1,7 +1,7 @@
 ﻿
 import { useState } from "react";
 import { technologyList } from "../../data/technologies";
-import { ArrowRight, ArrowUpRight, AppWindow, Check, ExternalLink, Layers3, LayoutGrid, Link2, Monitor, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, AppWindow, Check, ExternalLink, LayoutGrid, Link2, Monitor, X } from "lucide-react";
 import { projectsList, type ProjectCategory, type ProjectItem } from "../../data/projects";
 import PortfolioModal from "../modals/PortfolioModal";
 import "../../styles/portfolio.css";
@@ -40,7 +40,7 @@ export default function Portfolio() {
         <section className="ctnPortfolio" id="portfolio">
             <div className="ctnContenido">
                 <div className="ctnPortfolioTitle">
-                    <span className="portfolioTag"><Layers3 size={15} /> PORTAFOLIO</span>
+                    {/* <span className="portfolioTag"><Layers3 size={15} /> PORTAFOLIO</span> */}
                     <h2>Proyectos <span>destacados.</span></h2>
                     <p>Una selección de aplicaciones, sistemas y landings que he desarrollado.</p>
                 </div>

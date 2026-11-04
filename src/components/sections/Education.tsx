@@ -103,67 +103,64 @@ export default function Education() {
                     ))}
                 </div>
 
-                <div className="ctnEducationCarousel">
-                    <div
-                        className="ctnEducationGrid"
-                        ref={sliderRef}
-                        role="region"
-                        aria-roledescription="carrusel"
-                        aria-label={`Formación académica: ${filter}`}
-                        tabIndex={0}
-                        onPointerDown={handleDragStart}
-                        onPointerMove={handleDragMove}
-                        onPointerUp={handleDragEnd}
-                        onPointerCancel={handleDragCancel}
-                        onLostPointerCapture={handleDragCancel}
-                        onClickCapture={handleDragClick}
-                    >
+                <div className="ctnEducationGrid"
+                    ref={sliderRef}
+                    role="region"
+                    aria-roledescription="carrusel"
+                    aria-label={`Formación académica: ${filter}`}
+                    tabIndex={0}
+                    onPointerDown={handleDragStart}
+                    onPointerMove={handleDragMove}
+                    onPointerUp={handleDragEnd}
+                    onPointerCancel={handleDragCancel}
+                    onLostPointerCapture={handleDragCancel}
+                    onClickCapture={handleDragClick}
+                >
 
-                        {displayedEducation.map(item => {
-                            const isEducation = item.type === "education";
-                            const isCertification = !isEducation && item.kind === "certification";
-                            const Icon = isEducation ? GraduationCap : isCertification ? Award : BookOpen;
+                    {displayedEducation.map(item => {
+                        const isEducation = item.type === "education";
+                        const isCertification = !isEducation && item.kind === "certification";
+                        const Icon = isEducation ? GraduationCap : isCertification ? Award : BookOpen;
 
-                            return (
-                                <article className="educationCard" key={item.id}>
-                                    <div className="educationImage">
-                                        {item.image ? <img src={item.image} alt={item.institution} loading="lazy" /> : <Icon size={52} strokeWidth={1.4} />}
+                        return (
+                            <article className="educationCard" key={item.id}>
+                                <div className="educationImage">
+                                    {item.image ? <img src={item.image} alt={item.institution} loading="lazy" /> : <Icon size={52} strokeWidth={1.4} />}
+                                </div>
+
+                                <div className="educationInfo">
+                                    <div className="ctnEducationMeta">
+                                        <span className="educationCategory">
+                                            <Icon size={15} />
+                                            {isEducation ? "Educación superior" : isCertification ? "Certificación" : "Curso / Capacitación"}
+                                        </span>
+                                        {item.level && <span className="educationCategory"><GraduationCap size={15} /> {item.level}</span>}
+                                        {item.hours && <span className="educationPeriod"><Clock3 size={14} /> {item.hours} horas</span>}
                                     </div>
 
-                                    <div className="educationInfo">
-                                        <div className="ctnEducationMeta">
-                                            <span className="educationCategory">
-                                                <Icon size={15} />
-                                                {isEducation ? "Educación superior" : isCertification ? "Certificación" : "Curso / Capacitación"}
-                                            </span>
-                                            {item.level && <span className="educationCategory"><GraduationCap size={15} /> {item.level}</span>}
-                                            {item.hours && <span className="educationPeriod"><Clock3 size={14} /> {item.hours} horas</span>}
+                                    <h3>{item.title}</h3>
+                                    <p>{item.institution}</p>
+
+                                    <div className="ctnEducationDetails">
+                                        <div className="subItem">
+                                            <span><CalendarDays size={15} /> {item.date || item.period}</span>
+                                            {item.location && (
+                                                item.locationUrl
+                                                    ? <a href={item.locationUrl} target="_blank" rel="noopener noreferrer"><MapPin size={15} /> {item.location}</a>
+                                                    : <span><MapPin size={15} /> {item.location}</span>
+                                            )}
                                         </div>
-
-                                        <h3>{item.title}</h3>
-                                        <p>{item.institution}</p>
-
-                                        <div className="ctnEducationDetails">
-                                            <div className="subItem">
-                                                <span><CalendarDays size={15} /> {item.date || item.period}</span>
-                                                {item.location && (
-                                                    item.locationUrl
-                                                        ? <a href={item.locationUrl} target="_blank" rel="noopener noreferrer"><MapPin size={15} /> {item.location}</a>
-                                                        : <span><MapPin size={15} /> {item.location}</span>
-                                                )}
-                                            </div>
-                                        </div>
-
-                                        {item.document && (
-                                            <a href={item.document} target="_blank" rel="noopener noreferrer" className="educationDocument">
-                                                Ver {isEducation ? "constancia" : "certificado"} <ArrowUpRight size={17} />
-                                            </a>
-                                        )}
                                     </div>
-                                </article>
-                            );
-                        })}
-                    </div>
+
+                                    {item.document && (
+                                        <a href={item.document} target="_blank" rel="noopener noreferrer" className="educationDocument">
+                                            Ver {isEducation ? "constancia" : "certificado"} <ArrowUpRight size={17} />
+                                        </a>
+                                    )}
+                                </div>
+                            </article>
+                        );
+                    })}
                 </div>
 
                 {displayedEducation.length === 0 && (

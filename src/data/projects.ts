@@ -48,11 +48,10 @@ export const projectsList: ProjectItem[] = [
         category: "Sistema web",
         description: "Sistema de seguimiento de postulantes, gestión de leads y asesores.",
         detail: "Aplicación web orientada a centralizar la información y el seguimiento de postulantes e ingresantes. Permite gestionar leads, asesores, programas académicos, convocatorias y estados de los procesos. Incluye funcionalidades frontend y backend, consultas de datos, filtros e integraciones para optimizar la gestión y el seguimiento de la información.",
-        image: "/images/projects/ingresantes.webp",
+        image: "/images/projects/ingresantes-1.webp",
         images: [
-            "/images/projects/ingresantes.webp",
-            "/images/projects/ingresantes-2.webp",
-            "/images/projects/ingresantes-3.webp"
+            "/images/projects/ingresantes-1.webp",
+            "/images/projects/ingresantes-2.webp"
         ],
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
         features: [
@@ -67,29 +66,32 @@ export const projectsList: ProjectItem[] = [
         featured: true
     },
     {
-        id: "backoffice",
-        title: "Backoffice",
-        category: "Sistema web",
-        description: "Plataforma para la gestión de registros, documentación y reportes.",
-        detail: "Sistema administrativo desarrollado para facilitar la gestión de información y los procesos internos mediante una plataforma centralizada. Incluye módulos para administrar registros, consultar documentación, aplicar filtros y generar reportes, mejorando la organización de la información y las tareas operativas.",
-        image: "/images/projects/backoffice.webp",
+        id: "bancoNacion",
+        title: "Portal Web - Banco de la Nación",
+        category: "Landing page",
+        description: "Rediseño y migración de más de 200 páginas del portal institucional, modernizando y optimizando la experiencia de navegación.",
+        detail: "Participé en el diseño, desarrollo y migración de más de 200 páginas del portal institucional del Banco de la Nación, transformando interfaces tradicionales en diseños modernos, responsive y adaptables a distintos dispositivos. Implementé mejoras en la estructura visual, organización de contenidos, accesibilidad y buenas prácticas de SEO, contribuyendo a una navegación más intuitiva y a mejorar las condiciones técnicas para el posicionamiento del sitio en buscadores.",
+        image: "/images/projects/bancoNacion-1.webp",
         images: [
-            "/images/projects/backoffice.webp",
-            "/images/projects/backoffice-2.webp",
-            "/images/projects/backoffice-3.webp"
+            "/images/projects/bancoNacion-1.webp",
+            "/images/projects/bancoNacion-2.webp"
         ],
-        technologies: ["React", "TypeScript", "Laravel", "MySQL"],
+        technologies: ["HTML5", "CSS3", "JavaScript", "Figma", "jquery", "ASP"],
         features: [
-            "Gestión de registros",
-            "Administración de documentación",
-            "Consultas y filtros",
-            "Reportes de información"
+            "Rediseño y migración de más de 200 páginas web",
+            "Diseño moderno y adaptable a dispositivos móviles",
+            "Optimización de estructura y buenas prácticas SEO",
+            "Mejoras de navegación y experiencia de usuario",
+            "Maquetación e implementación de interfaces web",
+            "Actualización y organización de contenidos institucionales"
         ],
-        period: "2025 - Actualidad",
-        company: "Universidad Peruana Cayetano Heredia",
-        role: "Desarrollador Full Stack",
+        period: "2023 - 2024",
+        company: "Banco de la Nación",
+        role: "Practicante Profesional de Ingeniería de Sistemas",
+        url: "https://www.bn.com.pe/",
         featured: true
     },
+
     {
         id: "restaurant",
         title: "Sistema Restaurante",

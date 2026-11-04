@@ -96,11 +96,6 @@
 .ctnEducationFilters button.active svg { color: var(--text-dark); }
 
 /* CARRUSEL HORIZONTAL */
-.ctnEducationCarousel {
-    position: relative;
-    width: 100%;
-    min-width: 0;
-}
 
 .ctnEducationGrid {
     display: flex;
@@ -368,11 +363,18 @@
 
     .educationImage { width: 35%; }
     .educationInfo h3 { font-size: 19px; }
+    .ctnEducationGrid{
+        width: calc(100% + 4rem);
+        padding:  0 2rem;
+    }
+    .educationCard{
+        scroll-snap-align: center;
+    }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .ctnEducation { padding: 70px 0; }
+    .ctnEducation { padding: 70px 0; gap: 0;}
 
     .ctnEducationTitle { gap: 12px; }
     .ctnEducationHeading { gap: 12px; }
@@ -383,8 +385,9 @@
         justify-content: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 5px;
         scrollbar-width: none;
+        width: calc(100% + 4rem);
+        padding: 0 2rem ;
     }
 
     .ctnEducationFilters::-webkit-scrollbar { display: none; }

@@ -346,7 +346,7 @@
     }
 
     .ctnHeroInfo {
-        gap: 25px;
+        gap: 20px;
     }
 
     .ctnHeroText {
@@ -358,7 +358,8 @@
     }
 
     .heroBadge {
-        font-size: 10px;
+        display: none;
+        /* font-size: 10px; */
     }
 
     .heroGreeting {

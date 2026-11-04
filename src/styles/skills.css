@@ -208,6 +208,10 @@
     .skillInfo h3 { font-size: 12px; }
     .skillInfo span { font-size: 10px; }
 
+    .ctnSkillsFilters {
+        width: calc(100% + 4rem);
+        padding: 0 2rem;
+    }
     .ctnSkillsFilters button {
         padding: 8px 14px;
         font-size: 11px;
