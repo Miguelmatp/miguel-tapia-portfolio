@@ -28,9 +28,13 @@ export default function Portfolio() {
     const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
     const [showAll, setShowAll] = useState(false);
 
-    const featuredProjects = projectsList.filter(item => item.featured);
-    const availableProjects = showAll ? projectsList : featuredProjects;
-    const displayedProjects = availableProjects.filter(item => filter === "Todos" || item.category === filter);
+    // const featuredProjects = projectsList.filter(item => item.featured);
+    // const availableProjects = showAll ? projectsList : featuredProjects;
+    // const displayedProjects = availableProjects.filter(item => filter === "Todos" || item.category === filter);
+    
+    const filteredProjects = projectsList.filter(item => filter === "Todos" || item.category === filter);
+    const displayedProjects = filter === "Todos" && !showAll ? filteredProjects.slice(0, 3) : filteredProjects;
+
 
     return (
         <section className="ctnPortfolio" id="portfolio">
@@ -57,7 +61,14 @@ export default function Portfolio() {
                         return (
                             <article className="portfolioCard" key={item.id}>
                                 <div className="portfolioImage">
-                                    <img src={item.image} alt={`Vista de ${item.title}`} loading="lazy" />
+                                    {item.image ? (
+                                        <img src={item.image} alt={`Vista de ${item.title}`} loading="lazy" />
+                                    ) : (
+                                        <div className="portfolioImageFallback">
+                                            <AppWindow size={42} strokeWidth={1.5} />
+                                            <span>{item.title}</span>
+                                        </div>
+                                    )}
                                     <span className="portfolioCategory"><Icon size={14} /> {item.category}</span>
                                 </div>
 
@@ -110,12 +121,20 @@ export default function Portfolio() {
                     </div>
                 )}
 
-                {projectsList.some(item => !item.featured) && (
+                {/* {projectsList.some(item => !item.featured) && (
                     <button type="button" className="portfolioViewAll" onClick={() => setShowAll(value => !value)}>
                         {showAll ? "Ver proyectos destacados" : "Ver todos los proyectos"}
                         <ArrowUpRight size={18} />
                     </button>
+                )} */}
+                
+                {filter === "Todos" && projectsList.length > 3 && (
+                    <button type="button" className="portfolioViewAll" onClick={() => setShowAll(value => !value)}>
+                        {showAll ? "Mostrar menos proyectos" : "Ver todos los proyectos"}
+                        <ArrowUpRight size={18} />
+                    </button>
                 )}
+
             </div>
 
             <PortfolioModal project={selectedProject} onClose={() => setSelectedProject(null)} />

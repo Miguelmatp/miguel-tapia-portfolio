@@ -79,7 +79,14 @@ export default function PortfolioModal({ project, onClose }: Props) {
 
                         <div className="portfolioGallery">
                             <div className="portfolioGalleryMain">
-                                <img src={currentImage} alt={`${project.title}, captura ${activeImage + 1}`} />
+                                {currentImage ? (
+                                    <img src={currentImage} alt={`${project.title}, captura ${activeImage + 1}`} />
+                                ) : (
+                                    <div className="portfolioGalleryFallback">
+                                        <Monitor size={45} />
+                                        <span>Vista previa no disponible</span>
+                                    </div>
+                                )}
 
                                 <button type="button" className="portfolioExpand" onClick={() => setExpanded(true)} aria-label="Ampliar imagen">
                                     <Expand size={20} />
@@ -158,6 +165,16 @@ export default function PortfolioModal({ project, onClose }: Props) {
                                 </ul>
                             </div>
                         </div>
+                        
+                        {/* {project.url && (
+                            <div className="portfolioModalActions">
+                                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                                    <ExternalLink size={18} />
+                                    {project.category === "Landing page" ? "Ver página web" : "Ver proyecto"}
+                                </a>
+                            </div>
+                        )} */}
+
 
                         {(project.url || project.repository) && (
                             <div className="portfolioModalActions">

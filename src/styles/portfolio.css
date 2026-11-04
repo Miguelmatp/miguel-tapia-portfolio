@@ -18,6 +18,11 @@
 .ctnPortfolioFilters button.active { background: var(--primary); border-color: var(--primary); color: var(--text-dark); }
 .ctnPortfolioFilters button.active svg { color: var(--text-dark); }
 
+.ctnPortfolioFilters button:nth-of-type(4),
+.ctnPortfolioFilters button:last-of-type{
+    display: none;
+}
+
 /* GRID */
 .ctnPortfolioGrid { width: 100%; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: stretch; gap: 22px; }
 
@@ -107,4 +112,36 @@
 @media (prefers-reduced-motion: reduce) {
     .portfolioCard, .portfolioImage img, .portfolioViewAll, .ctnPortfolioActions button, .ctnPortfolioActions a { transition: none; }
     .portfolioCard:hover, .portfolioCard:hover .portfolioImage img { transform: none; }
+}
+
+
+/* EN portfolio.css */
+.portfolioImageFallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 25px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* EN portfolioModal.css */
+.portfolioGalleryFallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 13px;
 }

@@ -1,4 +1,4 @@
-
+import { landingPagesList } from "./landingPages";
 export type ProjectCategory = "Sistema web" | "Landing page" | "Aplicación" | "Integración";
 
 export interface ProjectItem {
@@ -91,39 +91,21 @@ export const projectsList: ProjectItem[] = [
         featured: true
     },
     {
-        id: "landing-upch",
-        title: "Landing - UPCH",
-        category: "Landing page",
-        description: "Desarrollo de landings y campañas para admisión, eventos y programas académicos.",
-        detail: "Desarrollo, maquetación y mantenimiento de páginas web orientadas a campañas de admisión, promoción académica y eventos de la Universidad Peruana Cayetano Heredia. Implementación de diseños responsive, formularios de registro, integraciones y optimizaciones de rendimiento utilizando HTML5, CSS3, JavaScript y WordPress.",
-        image: "/images/projects/landing-upch.webp",
-        images: [
-            "/images/projects/landing-upch.webp",
-            "/images/projects/landing-upch-2.webp"
-        ],
-        technologies: ["HTML5", "CSS3", "JavaScript", "WordPress"],
-        features: [
-            "Diseño y maquetación responsive",
-            "Formularios e integraciones",
-            "Adaptación para campañas",
-            "Optimización y mantenimiento"
-        ],
-        period: "2025 - Actualidad",
-        company: "UPCH - Dirección Comercial",
-        role: "Desarrollador Web",
-        featured: true
-    },
-    {
         id: "restaurant",
         title: "Sistema Restaurante",
-        category: "Aplicación",
+        category: "Sistema web",
         description: "Sistema de gestión de mesas, pedidos, cuentas y pagos con control de cocina.",
-        detail: "Aplicación web desarrollada para administrar las operaciones de un restaurante desde una plataforma centralizada. Permite gestionar mesas, registrar pedidos, enviar comandas a cocina, controlar estados de atención, dividir cuentas entre clientes y realizar pagos parciales mediante distintos métodos. También incluye herramientas para consultar el historial de ventas y generar reportes.",
-        image: "/images/projects/restaurant.webp",
+        detail: "Sistema web desarrollado para administrar las operaciones de un restaurante desde una plataforma centralizada. Permite gestionar mesas, registrar pedidos, enviar comandas a cocina, controlar estados de atención, dividir cuentas entre clientes y realizar pagos parciales mediante distintos métodos. También incluye herramientas para consultar el historial de ventas y generar reportes.",
+        image: "/images/projects/restaurant-1.webp",
         images: [
-            "/images/projects/restaurant.webp",
+            "/images/projects/restaurant-1.webp",
             "/images/projects/restaurant-2.webp",
-            "/images/projects/restaurant-3.webp"
+            "/images/projects/restaurant-3.webp",
+            "/images/projects/restaurant-4.webp",
+            "/images/projects/restaurant-5.webp",
+            "/images/projects/restaurant-6.webp",
+            "/images/projects/restaurant-7.webp",
+            "/images/projects/restaurant-8.webp"
         ],
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
         features: [
@@ -154,5 +136,6 @@ export const projectsList: ProjectItem[] = [
         ],
         role: "Desarrollador Front-End",
         featured: true
-    }
+    },
+    ...landingPagesList
 ];
