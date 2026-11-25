@@ -50,8 +50,7 @@ export const projectsList: ProjectItem[] = [
         detail: "Aplicación web orientada a centralizar la información y el seguimiento de postulantes e ingresantes. Permite gestionar leads, asesores, programas académicos, convocatorias y estados de los procesos. Incluye funcionalidades frontend y backend, consultas de datos, filtros e integraciones para optimizar la gestión y el seguimiento de la información.",
         image: "/images/projects/ingresantes-1.webp",
         images: [
-            "/images/projects/ingresantes-1.webp",
-            "/images/projects/ingresantes-2.webp"
+            "/images/projects/ingresantes-1.webp"
         ],
         technologies: ["React", "TypeScript", "Laravel", "MySQL"],
         features: [
